@@ -26,7 +26,7 @@ namespace FormularioApp
         private async Task CargarProveedores()
         {
             var proveedores = await _apiClient.ObtenerProveedores();  // Suponemos que este método obtiene la lista de proveedores
-            dataGridView1.DataSource = proveedores;  // Asignamos la lista de proveedores al DataGridView
+            dgvClientes.DataSource = proveedores;  // Asignamos la lista de proveedores al DataGridView
         }
 
         private async void btnAgregar_Click(object sender, EventArgs e)
@@ -34,11 +34,11 @@ namespace FormularioApp
             // Creamos un nuevo proveedor con los datos de los TextBox
             var nuevoProveedor = new Proveedor
             {
-                Nombre = txtNombre.Text,
-                Contacto = txtContacto.Text,
-                Telefono = txtTelefono.Text,
-                Direccion = txtDireccion.Text,
-                Correo = txtCorreo.Text
+                Nombre = txtNombreProveedor.Text,
+                Contacto = txtContactoProveedor.Text,
+                Telefono = txtTelefonoProvee.Text,
+                Direccion = txtDireccionProvee.Text,
+                Correo = txtCorreoProvee.Text
             };
 
             // Llamamos al método para agregar un nuevo proveedor
@@ -57,17 +57,17 @@ namespace FormularioApp
         private async void btnEditar_Click(object sender, EventArgs e)
         {
             // Suponemos que seleccionas un proveedor de la lista en el DataGridView
-            if (dataGridView1.SelectedRows.Count > 0)
+            if (dgvClientes.SelectedRows.Count > 0)
             {
-                var proveedorSeleccionado = dataGridView1.SelectedRows[0].DataBoundItem as Proveedor;
+                var proveedorSeleccionado = dgvClientes.SelectedRows[0].DataBoundItem as Proveedor;
                 if (proveedorSeleccionado != null)
                 {
                     // Actualizamos los datos del proveedor con los valores de los TextBox
-                    proveedorSeleccionado.Nombre = txtNombre.Text;
-                    proveedorSeleccionado.Contacto = txtContacto.Text;
-                    proveedorSeleccionado.Telefono = txtTelefono.Text;
-                    proveedorSeleccionado.Direccion = txtDireccion.Text;
-                    proveedorSeleccionado.Correo = txtCorreo.Text;
+                    proveedorSeleccionado.Nombre = txtNombreProveedor.Text;
+                    proveedorSeleccionado.Contacto = txtContactoProveedor.Text;
+                    proveedorSeleccionado.Telefono = txtTelefonoProvee.Text;
+                    proveedorSeleccionado.Direccion = txtDireccionProvee.Text;
+                    proveedorSeleccionado.Correo = txtCorreoProvee.Text;
 
                     // Llamamos al método para editar el proveedor
                     bool success = await _apiClient.EditarProveedor(proveedorSeleccionado);
@@ -87,9 +87,9 @@ namespace FormularioApp
         private async void btnEliminar_Click(object sender, EventArgs e)
         {
             // Comprobamos si hay algún proveedor seleccionado en el DataGridView
-            if (dataGridView1.SelectedRows.Count > 0)
+            if (dgvClientes.SelectedRows.Count > 0)
             {
-                var proveedorSeleccionado = dataGridView1.SelectedRows[0].DataBoundItem as Proveedor;
+                var proveedorSeleccionado = dgvClientes.SelectedRows[0].DataBoundItem as Proveedor;
                 if (proveedorSeleccionado != null)
                 {
                     // Llamamos al método para eliminar el proveedor
@@ -113,15 +113,15 @@ namespace FormularioApp
             if (e.RowIndex >= 0)
             {
                 // Asumimos que seleccionamos un proveedor en el DataGridView
-                var proveedorSeleccionado = dataGridView1.Rows[e.RowIndex].DataBoundItem as Proveedor;
+                var proveedorSeleccionado = dgvClientes.Rows[e.RowIndex].DataBoundItem as Proveedor;
                 if (proveedorSeleccionado != null)
                 {
                     // Cargamos los datos del proveedor seleccionado en los TextBox
-                    txtNombre.Text = proveedorSeleccionado.Nombre;
-                    txtContacto.Text = proveedorSeleccionado.Contacto;
-                    txtTelefono.Text = proveedorSeleccionado.Telefono;
-                    txtDireccion.Text = proveedorSeleccionado.Direccion;
-                    txtCorreo.Text = proveedorSeleccionado.Correo;
+                    txtNombreProveedor.Text = proveedorSeleccionado.Nombre;
+                    txtContactoProveedor.Text = proveedorSeleccionado.Contacto;
+                    txtTelefonoProvee.Text = proveedorSeleccionado.Telefono;
+                    txtDireccionProvee.Text = proveedorSeleccionado.Direccion;
+                    txtCorreoProvee.Text = proveedorSeleccionado.Correo;
                 }
             }
         }
