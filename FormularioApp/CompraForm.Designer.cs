@@ -70,8 +70,8 @@
             // tableLayoutPanel1
             // 
             tableLayoutPanel1.ColumnCount = 2;
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 56.15251F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 43.84749F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 55.54593F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 44.45407F));
             tableLayoutPanel1.Controls.Add(groupBox1, 0, 0);
             tableLayoutPanel1.Controls.Add(dataGridView1, 0, 1);
             tableLayoutPanel1.Controls.Add(panel2, 1, 0);
@@ -80,8 +80,8 @@
             tableLayoutPanel1.Location = new Point(0, 88);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 2;
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 33.12F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 66.88F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 38.4F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 61.6F));
             tableLayoutPanel1.Size = new Size(1154, 625);
             tableLayoutPanel1.TabIndex = 0;
             tableLayoutPanel1.Paint += tableLayoutPanel1_Paint;
@@ -120,7 +120,7 @@
             groupBox1.Dock = DockStyle.Fill;
             groupBox1.Location = new Point(3, 3);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(642, 201);
+            groupBox1.Size = new Size(635, 234);
             groupBox1.TabIndex = 20;
             groupBox1.TabStop = false;
             groupBox1.Text = "Informacion De Compra:";
@@ -157,10 +157,10 @@
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Producto, PrecioCompra, Cantidad, Subtotal });
             dataGridView1.Dock = DockStyle.Fill;
-            dataGridView1.Location = new Point(3, 210);
+            dataGridView1.Location = new Point(3, 243);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(642, 412);
+            dataGridView1.Size = new Size(635, 379);
             dataGridView1.TabIndex = 21;
             // 
             // label1
@@ -196,7 +196,7 @@
             // comboBox2
             // 
             comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(22, 66);
+            comboBox2.Location = new Point(22, 67);
             comboBox2.Name = "comboBox2";
             comboBox2.Size = new Size(160, 28);
             comboBox2.TabIndex = 15;
@@ -225,9 +225,9 @@
             panel2.Controls.Add(label3);
             panel2.Controls.Add(label4);
             panel2.Dock = DockStyle.Fill;
-            panel2.Location = new Point(651, 3);
+            panel2.Location = new Point(644, 3);
             panel2.Name = "panel2";
-            panel2.Size = new Size(500, 201);
+            panel2.Size = new Size(507, 234);
             panel2.TabIndex = 24;
             // 
             // label4
@@ -238,7 +238,7 @@
             label4.ForeColor = SystemColors.ButtonHighlight;
             label4.Location = new Point(0, 0);
             label4.Name = "label4";
-            label4.Size = new Size(500, 201);
+            label4.Size = new Size(507, 234);
             label4.TabIndex = 24;
             label4.TextAlign = ContentAlignment.MiddleLeft;
             // 
@@ -249,9 +249,9 @@
             panel3.Controls.Add(label10);
             panel3.Controls.Add(label6);
             panel3.Dock = DockStyle.Fill;
-            panel3.Location = new Point(651, 210);
+            panel3.Location = new Point(644, 243);
             panel3.Name = "panel3";
-            panel3.Size = new Size(500, 412);
+            panel3.Size = new Size(507, 379);
             panel3.TabIndex = 25;
             // 
             // label6
@@ -262,7 +262,7 @@
             label6.ForeColor = SystemColors.ButtonHighlight;
             label6.Location = new Point(0, 0);
             label6.Name = "label6";
-            label6.Size = new Size(500, 412);
+            label6.Size = new Size(507, 379);
             label6.TabIndex = 25;
             label6.TextAlign = ContentAlignment.MiddleLeft;
             // 
@@ -288,7 +288,7 @@
             // 
             label9.BackColor = Color.DarkOliveGreen;
             label9.Font = new Font("Century Gothic", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label9.Location = new Point(216, 108);
+            label9.Location = new Point(216, 125);
             label9.Name = "label9";
             label9.Size = new Size(157, 37);
             label9.TabIndex = 27;
@@ -297,7 +297,7 @@
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(216, 159);
+            textBox2.Location = new Point(216, 177);
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(157, 27);
             textBox2.TabIndex = 28;
@@ -320,7 +320,7 @@
             // 
             label10.BackColor = Color.DarkOliveGreen;
             label10.Font = new Font("Century Gothic", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label10.Location = new Point(132, 36);
+            label10.Location = new Point(173, 40);
             label10.Name = "label10";
             label10.Size = new Size(165, 37);
             label10.TabIndex = 26;
@@ -329,7 +329,7 @@
             // 
             // textBox3
             // 
-            textBox3.Location = new Point(117, 94);
+            textBox3.Location = new Point(160, 94);
             textBox3.Name = "textBox3";
             textBox3.Size = new Size(195, 27);
             textBox3.TabIndex = 27;
@@ -339,7 +339,7 @@
             btnRegistrar.IconChar = FontAwesome.Sharp.IconChar.ArrowUpFromBracket;
             btnRegistrar.IconColor = Color.Black;
             btnRegistrar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnRegistrar.Location = new Point(163, 166);
+            btnRegistrar.Location = new Point(204, 157);
             btnRegistrar.Name = "btnRegistrar";
             btnRegistrar.Size = new Size(112, 78);
             btnRegistrar.TabIndex = 30;
@@ -380,7 +380,7 @@
             // 
             label11.BackColor = Color.DarkOliveGreen;
             label11.Font = new Font("Century Gothic", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label11.Location = new Point(25, 108);
+            label11.Location = new Point(25, 125);
             label11.Name = "label11";
             label11.Size = new Size(157, 37);
             label11.TabIndex = 30;
@@ -389,7 +389,7 @@
             // 
             // txtCantidad
             // 
-            txtCantidad.Location = new Point(25, 159);
+            txtCantidad.Location = new Point(25, 177);
             txtCantidad.Name = "txtCantidad";
             txtCantidad.Size = new Size(157, 27);
             txtCantidad.TabIndex = 31;

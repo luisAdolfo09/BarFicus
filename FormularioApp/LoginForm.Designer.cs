@@ -31,7 +31,6 @@
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
             pnlLateral = new Panel();
-            pictureBox1 = new PictureBox();
             label1 = new Label();
             label2 = new Label();
             txtUsuario = new TextBox();
@@ -40,34 +39,25 @@
             errorProvider1 = new ErrorProvider(components);
             lblRegistrarse = new LinkLabel();
             label3 = new Label();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            panel1 = new Panel();
             ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // pnlLateral
             // 
             pnlLateral.BackgroundImage = (Image)resources.GetObject("pnlLateral.BackgroundImage");
             pnlLateral.BackgroundImageLayout = ImageLayout.Stretch;
-            pnlLateral.Location = new Point(0, 2);
+            pnlLateral.Dock = DockStyle.Top;
+            pnlLateral.Location = new Point(0, 0);
             pnlLateral.Name = "pnlLateral";
-            pnlLateral.Size = new Size(800, 695);
+            pnlLateral.Size = new Size(442, 301);
             pnlLateral.TabIndex = 0;
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.ImageLocation = "";
-            pictureBox1.Location = new Point(800, -23);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(601, 439);
-            pictureBox1.TabIndex = 1;
-            pictureBox1.TabStop = false;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(860, 461);
+            label1.Location = new Point(20, 33);
             label1.Name = "label1";
             label1.RightToLeft = RightToLeft.No;
             label1.Size = new Size(65, 20);
@@ -77,7 +67,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(845, 516);
+            label2.Location = new Point(20, 84);
             label2.Name = "label2";
             label2.Size = new Size(91, 20);
             label2.TabIndex = 3;
@@ -85,7 +75,7 @@
             // 
             // txtUsuario
             // 
-            txtUsuario.Location = new Point(1055, 458);
+            txtUsuario.Location = new Point(135, 30);
             txtUsuario.Name = "txtUsuario";
             txtUsuario.Size = new Size(264, 27);
             txtUsuario.TabIndex = 4;
@@ -93,7 +83,7 @@
             // 
             // txtContraseña
             // 
-            txtContraseña.Location = new Point(1055, 509);
+            txtContraseña.Location = new Point(135, 84);
             txtContraseña.Name = "txtContraseña";
             txtContraseña.Size = new Size(264, 27);
             txtContraseña.TabIndex = 5;
@@ -102,7 +92,7 @@
             // btnIniciarSesion
             // 
             btnIniciarSesion.BackColor = Color.LightSeaGreen;
-            btnIniciarSesion.Location = new Point(908, 571);
+            btnIniciarSesion.Location = new Point(18, 147);
             btnIniciarSesion.Name = "btnIniciarSesion";
             btnIniciarSesion.Size = new Size(412, 43);
             btnIniciarSesion.TabIndex = 6;
@@ -118,7 +108,7 @@
             // 
             lblRegistrarse.AutoSize = true;
             lblRegistrarse.Font = new Font("Courier New", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblRegistrarse.Location = new Point(1184, 644);
+            lblRegistrarse.Location = new Point(268, 231);
             lblRegistrarse.Name = "lblRegistrarse";
             lblRegistrarse.Size = new Size(131, 21);
             lblRegistrarse.TabIndex = 7;
@@ -130,40 +120,48 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Courier New", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.Location = new Point(982, 645);
+            label3.Location = new Point(39, 232);
             label3.Name = "label3";
             label3.Size = new Size(196, 20);
             label3.TabIndex = 8;
             label3.Text = "No tienes cuenta?";
+            // 
+            // panel1
+            // 
+            panel1.BackColor = SystemColors.ControlDark;
+            panel1.Controls.Add(label1);
+            panel1.Controls.Add(lblRegistrarse);
+            panel1.Controls.Add(label3);
+            panel1.Controls.Add(txtUsuario);
+            panel1.Controls.Add(label2);
+            panel1.Controls.Add(btnIniciarSesion);
+            panel1.Controls.Add(txtContraseña);
+            panel1.Dock = DockStyle.Fill;
+            panel1.Location = new Point(0, 301);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(442, 290);
+            panel1.TabIndex = 9;
             // 
             // LoginForm
             // 
             AutoScaleDimensions = new SizeF(9F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImageLayout = ImageLayout.Zoom;
-            ClientSize = new Size(1402, 697);
-            Controls.Add(label3);
-            Controls.Add(lblRegistrarse);
-            Controls.Add(btnIniciarSesion);
-            Controls.Add(txtContraseña);
-            Controls.Add(txtUsuario);
-            Controls.Add(label2);
-            Controls.Add(label1);
-            Controls.Add(pictureBox1);
+            ClientSize = new Size(442, 591);
+            Controls.Add(panel1);
             Controls.Add(pnlLateral);
             Font = new Font("Segoe UI", 9F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             Name = "LoginForm";
             Text = "LoginForm";
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)errorProvider1).EndInit();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
 
         private Panel pnlLateral;
-        private PictureBox pictureBox1;
         private Label label1;
         private Label label2;
         private TextBox txtUsuario;
@@ -172,5 +170,6 @@
         private ErrorProvider errorProvider1;
         private Label label3;
         private LinkLabel lblRegistrarse;
+        private Panel panel1;
     }
 }

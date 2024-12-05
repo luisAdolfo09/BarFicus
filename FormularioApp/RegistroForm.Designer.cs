@@ -31,6 +31,7 @@
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegistroForm));
             panel1 = new Panel();
+            btnAtras = new Button();
             pictureBox2 = new PictureBox();
             btnRegistrar = new Button();
             txtRegistroContraseña = new TextBox();
@@ -40,7 +41,6 @@
             label1 = new Label();
             pictureBox1 = new PictureBox();
             errorProvider1 = new ErrorProvider(components);
-            btnAtras = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -59,11 +59,24 @@
             panel1.Controls.Add(label2);
             panel1.Controls.Add(label1);
             panel1.Controls.Add(pictureBox1);
-            panel1.Location = new Point(124, 24);
+            panel1.Dock = DockStyle.Fill;
+            panel1.Location = new Point(0, 0);
             panel1.Margin = new Padding(3, 4, 3, 4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(858, 596);
+            panel1.Size = new Size(876, 598);
             panel1.TabIndex = 1;
+            // 
+            // btnAtras
+            // 
+            btnAtras.BackColor = Color.LightSeaGreen;
+            btnAtras.Font = new Font("Courier New", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnAtras.Location = new Point(701, 525);
+            btnAtras.Name = "btnAtras";
+            btnAtras.Size = new Size(122, 45);
+            btnAtras.TabIndex = 8;
+            btnAtras.Text = "Atras";
+            btnAtras.UseVisualStyleBackColor = false;
+            btnAtras.Click += btnAtras_Click;
             // 
             // pictureBox2
             // 
@@ -91,7 +104,8 @@
             // 
             // txtRegistroContraseña
             // 
-            txtRegistroContraseña.Location = new Point(446, 339);
+            txtRegistroContraseña.BackColor = SystemColors.ScrollBar;
+            txtRegistroContraseña.Location = new Point(446, 349);
             txtRegistroContraseña.Margin = new Padding(3, 4, 3, 4);
             txtRegistroContraseña.MaxLength = 10;
             txtRegistroContraseña.Name = "txtRegistroContraseña";
@@ -102,7 +116,8 @@
             // 
             // txtRegistroUsuario
             // 
-            txtRegistroUsuario.Location = new Point(446, 231);
+            txtRegistroUsuario.BackColor = SystemColors.ScrollBar;
+            txtRegistroUsuario.Location = new Point(447, 242);
             txtRegistroUsuario.Margin = new Padding(3, 4, 3, 4);
             txtRegistroUsuario.MaxLength = 12;
             txtRegistroUsuario.Name = "txtRegistroUsuario";
@@ -114,7 +129,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Courier New", 12F, FontStyle.Bold);
-            label3.Location = new Point(435, 311);
+            label3.Location = new Point(494, 312);
             label3.Name = "label3";
             label3.Size = new Size(274, 23);
             label3.TabIndex = 3;
@@ -124,7 +139,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Courier New", 12F, FontStyle.Bold);
-            label2.Location = new Point(431, 203);
+            label2.Location = new Point(456, 204);
             label2.Name = "label2";
             label2.Size = new Size(346, 23);
             label2.TabIndex = 2;
@@ -143,7 +158,7 @@
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(0, 0);
+            pictureBox1.Location = new Point(0, 13);
             pictureBox1.Margin = new Padding(3, 4, 3, 4);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(429, 553);
@@ -155,23 +170,11 @@
             // 
             errorProvider1.ContainerControl = this;
             // 
-            // btnAtras
-            // 
-            btnAtras.BackColor = Color.LightSeaGreen;
-            btnAtras.Font = new Font("Courier New", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnAtras.Location = new Point(701, 525);
-            btnAtras.Name = "btnAtras";
-            btnAtras.Size = new Size(122, 45);
-            btnAtras.TabIndex = 8;
-            btnAtras.Text = "Atras";
-            btnAtras.UseVisualStyleBackColor = false;
-            btnAtras.Click += btnAtras_Click;
-            // 
             // RegistroForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1083, 709);
+            ClientSize = new Size(876, 598);
             Controls.Add(panel1);
             Name = "RegistroForm";
             Text = "RegistroForm";
