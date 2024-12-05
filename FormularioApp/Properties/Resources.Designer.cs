@@ -59,5 +59,25 @@ namespace FormularioApp.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap barficus_adjusted_horizontal_more {
+            get {
+                object obj = ResourceManager.GetObject("barficus_adjusted_horizontal_more", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Imagen_de_WhatsApp_2024_12_04_a_las_21_05_00_e04c3daf {
+            get {
+                object obj = ResourceManager.GetObject("Imagen de WhatsApp 2024-12-04 a las 21.05.00_e04c3daf", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

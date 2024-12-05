@@ -129,7 +129,7 @@
             txtCantidaddt.Name = "txtCantidaddt";
             txtCantidaddt.Size = new Size(125, 27);
             txtCantidaddt.TabIndex = 9;
-            //
+            // 
             // txtPrecioUnitdt
             // 
             txtPrecioUnitdt.Location = new Point(600, 168);
@@ -151,7 +151,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(902, 495);
             Controls.Add(dgvDetalleCompra);
             Controls.Add(txtPrecioUnitdt);
             Controls.Add(txtCantidaddt);

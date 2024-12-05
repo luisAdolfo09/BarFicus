@@ -194,7 +194,7 @@
             // dgvEmpleados
             // 
             dgvEmpleados.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvEmpleados.Location = new Point(12, 392);
+            dgvEmpleados.Location = new Point(43, 396);
             dgvEmpleados.Name = "dgvEmpleados";
             dgvEmpleados.RowHeadersWidth = 51;
             dgvEmpleados.Size = new Size(940, 188);

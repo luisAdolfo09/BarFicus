@@ -17,6 +17,14 @@ namespace FormularioApp
             InitializeComponent();
         }
 
-       
+        private void txtDescripcion_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

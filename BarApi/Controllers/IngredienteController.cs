@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using ProyectoData; // Asegúrate de tener un IngredienteData similar al ProveedorData o ProductoData
@@ -6,6 +7,7 @@ using SharedModels;
 namespace ProyectoWebAPI.Controllers
 {
     [Route("api/[controller]")]
+    [Authorize]
     [ApiController]
     public class IngredienteController : ControllerBase
     {

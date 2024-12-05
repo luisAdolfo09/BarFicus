@@ -43,11 +43,15 @@
             btnempleados = new Button();
             btnRegist = new Button();
             panelLogo = new Panel();
+            pictureBox1 = new PictureBox();
             panelChildForm = new Panel();
+            btnProducto = new FontAwesome.Sharp.IconButton();
             panelIniLateral.SuspendLayout();
             panelInventario.SuspendLayout();
             panelNegocio.SuspendLayout();
             panelSubMenu.SuspendLayout();
+            panelLogo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // panelIniLateral
@@ -82,7 +86,6 @@
             // Ingredientes
             // 
             Ingredientes.Dock = DockStyle.Top;
-            Ingredientes.FlatAppearance.BorderSize = 0;
             Ingredientes.FlatStyle = FlatStyle.Flat;
             Ingredientes.ForeColor = Color.LightGray;
             Ingredientes.Location = new Point(0, 80);
@@ -98,7 +101,6 @@
             // btnPlatillos
             // 
             btnPlatillos.Dock = DockStyle.Top;
-            btnPlatillos.FlatAppearance.BorderSize = 0;
             btnPlatillos.FlatStyle = FlatStyle.Flat;
             btnPlatillos.ForeColor = Color.LightGray;
             btnPlatillos.Location = new Point(0, 40);
@@ -114,7 +116,6 @@
             // btnProductos
             // 
             btnProductos.Dock = DockStyle.Top;
-            btnProductos.FlatAppearance.BorderSize = 0;
             btnProductos.FlatStyle = FlatStyle.Flat;
             btnProductos.ForeColor = Color.LightGray;
             btnProductos.Location = new Point(0, 0);
@@ -157,7 +158,6 @@
             // btnVentas
             // 
             btnVentas.Dock = DockStyle.Top;
-            btnVentas.FlatAppearance.BorderSize = 0;
             btnVentas.FlatStyle = FlatStyle.Flat;
             btnVentas.ForeColor = Color.LightGray;
             btnVentas.Location = new Point(0, 40);
@@ -173,7 +173,6 @@
             // btnCompra
             // 
             btnCompra.Dock = DockStyle.Top;
-            btnCompra.FlatAppearance.BorderSize = 0;
             btnCompra.FlatStyle = FlatStyle.Flat;
             btnCompra.ForeColor = Color.LightGray;
             btnCompra.Location = new Point(0, 0);
@@ -205,6 +204,7 @@
             // panelSubMenu
             // 
             panelSubMenu.BackColor = Color.FromArgb(35, 32, 39);
+            panelSubMenu.Controls.Add(btnProducto);
             panelSubMenu.Controls.Add(btnProveedores);
             panelSubMenu.Controls.Add(btnempleados);
             panelSubMenu.Dock = DockStyle.Top;
@@ -216,7 +216,6 @@
             // btnProveedores
             // 
             btnProveedores.Dock = DockStyle.Top;
-            btnProveedores.FlatAppearance.BorderSize = 0;
             btnProveedores.FlatStyle = FlatStyle.Flat;
             btnProveedores.ForeColor = Color.LightGray;
             btnProveedores.Location = new Point(0, 40);
@@ -232,7 +231,6 @@
             // btnempleados
             // 
             btnempleados.Dock = DockStyle.Top;
-            btnempleados.FlatAppearance.BorderSize = 0;
             btnempleados.FlatStyle = FlatStyle.Flat;
             btnempleados.ForeColor = Color.LightGray;
             btnempleados.Location = new Point(0, 0);
@@ -263,11 +261,23 @@
             // 
             // panelLogo
             // 
+            panelLogo.Controls.Add(pictureBox1);
             panelLogo.Dock = DockStyle.Top;
             panelLogo.Location = new Point(0, 0);
             panelLogo.Name = "panelLogo";
             panelLogo.Size = new Size(232, 123);
             panelLogo.TabIndex = 0;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Dock = DockStyle.Fill;
+            pictureBox1.Image = Properties.Resources.barficus_adjusted_horizontal_more;
+            pictureBox1.Location = new Point(0, 0);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(232, 123);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 0;
+            pictureBox1.TabStop = false;
             // 
             // panelChildForm
             // 
@@ -277,6 +287,23 @@
             panelChildForm.Name = "panelChildForm";
             panelChildForm.Size = new Size(679, 553);
             panelChildForm.TabIndex = 1;
+            // 
+            // btnProducto
+            // 
+            btnProducto.BackColor = Color.FromArgb(35, 32, 39);
+            btnProducto.Dock = DockStyle.Top;
+            btnProducto.FlatStyle = FlatStyle.Flat;
+            btnProducto.ForeColor = Color.White;
+            btnProducto.IconChar = FontAwesome.Sharp.IconChar.None;
+            btnProducto.IconColor = Color.Black;
+            btnProducto.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnProducto.Location = new Point(0, 80);
+            btnProducto.Name = "btnProducto";
+            btnProducto.Size = new Size(232, 47);
+            btnProducto.TabIndex = 3;
+            btnProducto.Text = "Nuevo Producto";
+            btnProducto.TextImageRelation = TextImageRelation.TextBeforeImage;
+            btnProducto.UseVisualStyleBackColor = false;
             // 
             // IniForm
             // 
@@ -292,6 +319,8 @@
             panelInventario.ResumeLayout(false);
             panelNegocio.ResumeLayout(false);
             panelSubMenu.ResumeLayout(false);
+            panelLogo.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
@@ -316,5 +345,7 @@
         private Button btnCompra;
         private Button btnNegocios;
         private Panel panelChildForm;
+        private PictureBox pictureBox1;
+        private FontAwesome.Sharp.IconButton btnProducto;
     }
 }
