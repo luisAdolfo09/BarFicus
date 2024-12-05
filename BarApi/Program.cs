@@ -42,6 +42,13 @@ builder.Services.AddSwaggerGen();
 builder.Services.Configure<ConnectionStrings>(builder.Configuration.GetSection("ConnectionStrings"));
 builder.Services.AddSingleton<EmpleadoData>();
 builder.Services.AddSingleton<CompraData>();
+builder.Services.AddSingleton<ClienteData>();
+builder.Services.AddSingleton<VentaData>();
+builder.Services.AddSingleton<ProductoData>();
+builder.Services.AddSingleton<IngredienteData>();
+builder.Services.AddSingleton<IngredientePlatilloData>();
+builder.Services.AddSingleton<ProveedorData>();
+builder.Services.AddSingleton<DetalleCompraData>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

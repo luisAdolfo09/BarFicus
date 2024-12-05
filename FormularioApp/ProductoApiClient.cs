@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Newtonsoft.Json;
+using SharedModels;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
-using Newtonsoft.Json;
-using SharedModels;
 
 public class ProductoApiClient
 {
@@ -14,7 +12,7 @@ public class ProductoApiClient
     public ProductoApiClient()
     {
         _httpClient = new HttpClient();
-        _httpClient.BaseAddress = new Uri("http://localhost:5000/api/producto"); // Cambia la URL por la URL de tu API
+        _httpClient.BaseAddress = new Uri("http://localhost:5151/api/producto"); // Cambia el puerto y URL según sea necesario
         _httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
     }
 
@@ -48,7 +46,29 @@ public class ProductoApiClient
     // Método para eliminar un producto
     public async Task<bool> EliminarProducto(int id)
     {
-        var response = await _httpClient.DeleteAsync($"/{id}");
-        return response.IsSuccessStatusCode;
+        try
+        {
+            // Realizamos la llamada HTTP DELETE pasando el ID del producto
+            var response = await _httpClient.DeleteAsync($"/{id}");
+
+            // Verificamos si la respuesta fue exitosa
+            if (response.IsSuccessStatusCode)
+            {
+                return true;  // Eliminación exitosa
+            }
+            else
+            {
+                // Si la eliminación falla, obtenemos el mensaje de error
+                var errorMessage = await response.Content.ReadAsStringAsync();
+                Console.WriteLine($"Error al eliminar: {errorMessage}");
+                return false;  // Falla en la eliminación
+            }
+        }
+        catch (Exception ex)
+        {
+            // En caso de excepción, podemos registrar el error
+            Console.WriteLine($"Ocurrió un error al intentar eliminar: {ex.Message}");
+            return false;  // Error en el proceso
+        }
     }
 }

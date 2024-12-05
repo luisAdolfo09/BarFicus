@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Net.Http;
+﻿using Newtonsoft.Json;
+using SharedModels;
 using System.Net.Http.Headers;
 using System.Text;
-using System.Threading.Tasks;
-using Newtonsoft.Json;
-using SharedModels;
 
 public class EmpleadosApiClient
 {
@@ -14,12 +10,8 @@ public class EmpleadosApiClient
     public EmpleadosApiClient()
     {
         _httpClient = new HttpClient();
-        _httpClient.BaseAddress = new Uri("http://localhost:5000/api/empleado"); // Cambia la URL por la URL de tu API
+        _httpClient.BaseAddress = new Uri("http://localhost:5151/api/empleado"); // Asegúrate de usar el puerto correcto (5151 en este caso)
         _httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-        _httpClient = new HttpClient
-        {
-            BaseAddress = new Uri("http://localhost:5000")  // Direcció n correcta del servidor
-        };
     }
 
     // Método para obtener la lista de empleados
@@ -49,10 +41,31 @@ public class EmpleadosApiClient
         return response.IsSuccessStatusCode;
     }
 
-    // Método para eliminar un empleado
     public async Task<bool> EliminarEmpleado(int id)
     {
-        var response = await _httpClient.DeleteAsync($"/{id}");
-        return response.IsSuccessStatusCode;
+        try
+        {
+            // Realizamos la llamada HTTP DELETE pasando el ID del empleado
+            var response = await _httpClient.DeleteAsync($"/api/empleado/{id}");
+
+            // Verificamos si la respuesta fue exitosa
+            if (response.IsSuccessStatusCode)
+            {
+                return true;  // Eliminación exitosa
+            }
+            else
+            {
+                // Si la eliminación falla, obtenemos el mensaje de error
+                var errorMessage = await response.Content.ReadAsStringAsync();
+                Console.WriteLine($"Error al eliminar: {errorMessage}");
+                return false;  // Falla en la eliminación
+            }
+        }
+        catch (Exception ex)
+        {
+            // En caso de excepción, podemos registrar el error
+            Console.WriteLine($"Ocurrió un error al intentar eliminar: {ex.Message}");
+            return false;  // Error en el proceso
+        }
     }
 }

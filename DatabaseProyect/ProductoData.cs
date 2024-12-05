@@ -1,8 +1,8 @@
 ﻿using Microsoft.Extensions.Options;
 using System.Data.SqlClient;
 using System.Data;
-using DatabaseProyect;  
-using SharedModels;     
+using DatabaseProyect;  // Asegúrate de que esta referencia esté bien configurada
+using SharedModels;     // Referencia a la clase Producto
 
 namespace ProyectoData
 {

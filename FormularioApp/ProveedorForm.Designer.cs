@@ -41,25 +41,25 @@
             comboFiltroProvee = new ComboBox();
             label5 = new Label();
             panel3 = new Panel();
+            label9 = new Label();
+            label8 = new Label();
             iconButton4 = new FontAwesome.Sharp.IconButton();
             dgvClientes = new DataGridView();
-            label2 = new Label();
-            iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
-            label1 = new Label();
-            tableLayoutPanel1 = new TableLayoutPanel();
-            panel1 = new Panel();
-            panel2 = new Panel();
             NombreProveedor = new DataGridViewTextBoxColumn();
             ContactoProvee = new DataGridViewTextBoxColumn();
             TelefonoProvee = new DataGridViewTextBoxColumn();
             DireccionProvee = new DataGridViewTextBoxColumn();
             CorreoProvee = new DataGridViewTextBoxColumn();
-            label6 = new Label();
-            txtDireccionProvee = new TextBox();
-            label7 = new Label();
+            label2 = new Label();
+            iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
+            label1 = new Label();
+            tableLayoutPanel1 = new TableLayoutPanel();
+            panel1 = new Panel();
             txtTelefonoProvee = new TextBox();
-            label8 = new Label();
-            label9 = new Label();
+            label7 = new Label();
+            txtDireccionProvee = new TextBox();
+            label6 = new Label();
+            panel2 = new Panel();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvClientes).BeginInit();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).BeginInit();
@@ -159,7 +159,7 @@
             // label4
             // 
             label4.BackColor = Color.DarkOliveGreen;
-            label4.Font = new Font("Century Gothic", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label4.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label4.Location = new Point(19, 535);
             label4.Name = "label4";
             label4.Size = new Size(140, 38);
@@ -169,7 +169,7 @@
             // label3
             // 
             label3.BackColor = Color.DarkOliveGreen;
-            label3.Font = new Font("Century Gothic", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label3.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label3.Location = new Point(19, 219);
             label3.Name = "label3";
             label3.Size = new Size(140, 32);
@@ -188,7 +188,7 @@
             // 
             label5.BackColor = Color.DarkSlateGray;
             label5.Dock = DockStyle.Top;
-            label5.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label5.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label5.ForeColor = SystemColors.ButtonHighlight;
             label5.Location = new Point(0, 0);
             label5.Name = "label5";
@@ -211,6 +211,26 @@
             panel3.Name = "panel3";
             panel3.Size = new Size(828, 164);
             panel3.TabIndex = 1;
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label9.Location = new Point(535, 33);
+            label9.Name = "label9";
+            label9.Size = new Size(67, 20);
+            label9.TabIndex = 13;
+            label9.Text = "Campo:";
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label8.Location = new Point(327, 33);
+            label8.Name = "label8";
+            label8.Size = new Size(97, 20);
+            label8.TabIndex = 12;
+            label8.Text = "Buscar por:";
             // 
             // iconButton4
             // 
@@ -237,10 +257,45 @@
             dgvClientes.Size = new Size(822, 537);
             dgvClientes.TabIndex = 0;
             // 
+            // NombreProveedor
+            // 
+            NombreProveedor.HeaderText = "Nombre";
+            NombreProveedor.MinimumWidth = 6;
+            NombreProveedor.Name = "NombreProveedor";
+            NombreProveedor.Width = 150;
+            // 
+            // ContactoProvee
+            // 
+            ContactoProvee.HeaderText = "Contacto";
+            ContactoProvee.MinimumWidth = 6;
+            ContactoProvee.Name = "ContactoProvee";
+            ContactoProvee.Width = 125;
+            // 
+            // TelefonoProvee
+            // 
+            TelefonoProvee.HeaderText = "Telefono";
+            TelefonoProvee.MinimumWidth = 6;
+            TelefonoProvee.Name = "TelefonoProvee";
+            TelefonoProvee.Width = 125;
+            // 
+            // DireccionProvee
+            // 
+            DireccionProvee.HeaderText = "Direccion";
+            DireccionProvee.MinimumWidth = 6;
+            DireccionProvee.Name = "DireccionProvee";
+            DireccionProvee.Width = 180;
+            // 
+            // CorreoProvee
+            // 
+            CorreoProvee.HeaderText = "Correo";
+            CorreoProvee.MinimumWidth = 6;
+            CorreoProvee.Name = "CorreoProvee";
+            CorreoProvee.Width = 180;
+            // 
             // label2
             // 
             label2.BackColor = Color.DarkOliveGreen;
-            label2.Font = new Font("Century Gothic", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label2.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label2.Location = new Point(19, 116);
             label2.Name = "label2";
             label2.Size = new Size(140, 32);
@@ -264,7 +319,7 @@
             // label1
             // 
             label1.BackColor = Color.LightCyan;
-            label1.Font = new Font("Century Gothic", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.Location = new Point(106, 41);
             label1.Name = "label1";
             label1.Size = new Size(202, 43);
@@ -312,6 +367,42 @@
             panel1.Size = new Size(328, 716);
             panel1.TabIndex = 0;
             // 
+            // txtTelefonoProvee
+            // 
+            txtTelefonoProvee.Font = new Font("Segoe UI", 10.2F);
+            txtTelefonoProvee.Location = new Point(19, 369);
+            txtTelefonoProvee.Name = "txtTelefonoProvee";
+            txtTelefonoProvee.Size = new Size(194, 30);
+            txtTelefonoProvee.TabIndex = 14;
+            // 
+            // label7
+            // 
+            label7.BackColor = Color.DarkOliveGreen;
+            label7.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label7.Location = new Point(19, 312);
+            label7.Name = "label7";
+            label7.Size = new Size(140, 38);
+            label7.TabIndex = 13;
+            label7.Text = "Telefono:";
+            // 
+            // txtDireccionProvee
+            // 
+            txtDireccionProvee.Font = new Font("Segoe UI", 10.2F);
+            txtDireccionProvee.Location = new Point(19, 480);
+            txtDireccionProvee.Name = "txtDireccionProvee";
+            txtDireccionProvee.Size = new Size(289, 30);
+            txtDireccionProvee.TabIndex = 12;
+            // 
+            // label6
+            // 
+            label6.BackColor = Color.DarkOliveGreen;
+            label6.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label6.Location = new Point(19, 422);
+            label6.Name = "label6";
+            label6.Size = new Size(140, 38);
+            label6.TabIndex = 11;
+            label6.Text = "Direccion:";
+            // 
             // panel2
             // 
             panel2.BackColor = SystemColors.AppWorkspace;
@@ -323,97 +414,6 @@
             panel2.Size = new Size(828, 716);
             panel2.TabIndex = 1;
             // 
-            // NombreProveedor
-            // 
-            NombreProveedor.HeaderText = "Nombre";
-            NombreProveedor.MinimumWidth = 6;
-            NombreProveedor.Name = "NombreProveedor";
-            NombreProveedor.Width = 150;
-            // 
-            // ContactoProvee
-            // 
-            ContactoProvee.HeaderText = "Contacto";
-            ContactoProvee.MinimumWidth = 6;
-            ContactoProvee.Name = "ContactoProvee";
-            ContactoProvee.Width = 125;
-            // 
-            // TelefonoProvee
-            // 
-            TelefonoProvee.HeaderText = "Telefono";
-            TelefonoProvee.MinimumWidth = 6;
-            TelefonoProvee.Name = "TelefonoProvee";
-            TelefonoProvee.Width = 125;
-            // 
-            // DireccionProvee
-            // 
-            DireccionProvee.HeaderText = "Direccion";
-            DireccionProvee.MinimumWidth = 6;
-            DireccionProvee.Name = "DireccionProvee";
-            DireccionProvee.Width = 180;
-            // 
-            // CorreoProvee
-            // 
-            CorreoProvee.HeaderText = "Correo";
-            CorreoProvee.MinimumWidth = 6;
-            CorreoProvee.Name = "CorreoProvee";
-            CorreoProvee.Width = 180;
-            // 
-            // label6
-            // 
-            label6.BackColor = Color.DarkOliveGreen;
-            label6.Font = new Font("Century Gothic", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label6.Location = new Point(19, 422);
-            label6.Name = "label6";
-            label6.Size = new Size(140, 38);
-            label6.TabIndex = 11;
-            label6.Text = "Direccion:";
-            // 
-            // txtDireccionProvee
-            // 
-            txtDireccionProvee.Font = new Font("Segoe UI", 10.2F);
-            txtDireccionProvee.Location = new Point(19, 480);
-            txtDireccionProvee.Name = "txtDireccionProvee";
-            txtDireccionProvee.Size = new Size(289, 30);
-            txtDireccionProvee.TabIndex = 12;
-            // 
-            // label7
-            // 
-            label7.BackColor = Color.DarkOliveGreen;
-            label7.Font = new Font("Century Gothic", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label7.Location = new Point(19, 312);
-            label7.Name = "label7";
-            label7.Size = new Size(140, 38);
-            label7.TabIndex = 13;
-            label7.Text = "Telefono:";
-            // 
-            // txtTelefonoProvee
-            // 
-            txtTelefonoProvee.Font = new Font("Segoe UI", 10.2F);
-            txtTelefonoProvee.Location = new Point(19, 369);
-            txtTelefonoProvee.Name = "txtTelefonoProvee";
-            txtTelefonoProvee.Size = new Size(194, 30);
-            txtTelefonoProvee.TabIndex = 14;
-            // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.Font = new Font("Century Gothic", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label8.Location = new Point(327, 33);
-            label8.Name = "label8";
-            label8.Size = new Size(103, 21);
-            label8.TabIndex = 12;
-            label8.Text = "Buscar por:";
-            // 
-            // label9
-            // 
-            label9.AutoSize = true;
-            label9.Font = new Font("Century Gothic", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label9.Location = new Point(535, 33);
-            label9.Name = "label9";
-            label9.Size = new Size(79, 21);
-            label9.TabIndex = 13;
-            label9.Text = "Campo:";
-            // 
             // ProveedorForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -422,6 +422,7 @@
             Controls.Add(tableLayoutPanel1);
             Name = "ProveedorForm";
             Text = "ProveedorForm";
+            Load += ProveedorForm_Load_1;
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvClientes).EndInit();

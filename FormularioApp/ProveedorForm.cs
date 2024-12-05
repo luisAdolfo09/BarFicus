@@ -125,5 +125,10 @@ namespace FormularioApp
                 }
             }
         }
+
+        private void ProveedorForm_Load_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
