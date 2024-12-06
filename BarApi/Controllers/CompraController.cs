@@ -1,96 +1,111 @@
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using ProyectoData;
 using SharedModels;
-using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace ProyectoWebAPI.Controllers
+namespace ProyectoAPI.Controllers
 {
     [Route("api/[controller]")]
-    [Authorize]
     [ApiController]
     public class CompraController : ControllerBase
     {
         private readonly CompraData _compraData;
 
-        // Constructor para inyección de dependencia
+        // Constructor para inyectar la capa de datos
         public CompraController(CompraData compraData)
         {
             _compraData = compraData;
         }
 
-        // GET: api/compra
+        // Obtener la lista de compras
         [HttpGet]
-        public async Task<IActionResult> Lista()
+        public async Task<IActionResult> Get()
         {
-            List<Compra> lista = await _compraData.Lista();
+            var compras = await _compraData.Lista();
 
-            if (lista == null || lista.Count == 0)
+            if (compras == null || compras.Count == 0)
             {
-                return NoContent();
+                return NotFound("No se encontraron compras.");
             }
 
-            return Ok(lista);
+            return Ok(compras);
         }
 
-        // POST: api/compra
+        // Obtener una compra por su ID
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetById(int id)
+        {
+            var compra = await _compraData.Lista()
+                                        .ContinueWith(t => t.Result.FirstOrDefault(c => c.IdCompra == id));
+
+            if (compra == null)
+            {
+                return NotFound($"Compra con ID {id} no encontrada.");
+            }
+
+            return Ok(compra);
+        }
+
+        // Crear una nueva compra
         [HttpPost]
-        public async Task<IActionResult> Crear([FromBody] Compra objeto)
+        public async Task<IActionResult> Post([FromBody] Compra compra)
         {
-            if (objeto == null)
+            if (compra == null)
             {
-                return BadRequest("La compra no puede ser nula");
+                return BadRequest("El objeto de compra no puede ser nulo.");
             }
 
-            // Validar IdProveedor antes de pasar a la base de datos
-            if (objeto.IdProveedor == null || objeto.IdProveedor <= 0)
+            if (!ModelState.IsValid)
             {
-                return BadRequest("El IdProveedor es obligatorio y debe ser un valor válido.");
+                return BadRequest(ModelState);
             }
 
-            bool respuesta = await _compraData.Crear(objeto);
-            if (respuesta)
+            bool resultado = await _compraData.Crear(compra);
+
+            if (!resultado)
             {
-                return CreatedAtAction(nameof(Lista), new { id = objeto.IdCompra }, objeto);
+                return StatusCode(500, "Hubo un error al crear la compra.");
             }
 
-            return StatusCode(StatusCodes.Status500InternalServerError, new { isSuccess = respuesta });
+            return CreatedAtAction(nameof(GetById), new { id = compra.IdCompra }, compra);
         }
 
-
-        // PUT: api/compra
-        [HttpPut]
-        public async Task<IActionResult> Editar([FromBody] Compra objeto)
+        // Editar una compra existente
+        [HttpPut("{id}")]
+        public async Task<IActionResult> Put(int id, [FromBody] Compra compra)
         {
-            if (objeto == null)
+            if (compra == null || compra.IdCompra != id)
             {
-                return BadRequest("La compra no puede ser nula");
+                return BadRequest("El ID de la compra no coincide.");
             }
 
-            bool respuesta = await _compraData.Editar(objeto);
-
-            if (respuesta)
+            if (!ModelState.IsValid)
             {
-                return Ok(new { isSuccess = respuesta });
+                return BadRequest(ModelState);
             }
 
-            return NotFound(new { isSuccess = false, message = "Compra no encontrada" });
+            bool resultado = await _compraData.Editar(compra);
+
+            if (!resultado)
+            {
+                return StatusCode(500, "Hubo un error al actualizar la compra.");
+            }
+
+            return NoContent();  // Si la actualización fue exitosa, se devuelve 204 No Content.
         }
 
-        // DELETE: api/compra/{id}
+        // Eliminar una compra por su ID
         [HttpDelete("{id}")]
-        public async Task<IActionResult> Eliminar(int id)
+        public async Task<IActionResult> Delete(int id)
         {
-            bool respuesta = await _compraData.Eliminar(id);
+            bool resultado = await _compraData.Eliminar(id);
 
-            if (respuesta)
+            if (!resultado)
             {
-                return Ok(new { isSuccess = respuesta });
+                return NotFound($"Compra con ID {id} no encontrada.");
             }
 
-            return NotFound(new { isSuccess = false, message = "Compra no encontrada" });
+            return NoContent();
         }
     }
 }

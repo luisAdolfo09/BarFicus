@@ -70,7 +70,7 @@ namespace ProyectoData
         // Crear un nuevo producto utilizando un procedimiento almacenado
         public async Task<bool> Crear(Producto objeto)
         {
-            bool respuesta = true;
+            bool respuesta = false;
 
             try
             {
@@ -81,34 +81,42 @@ namespace ProyectoData
                         CommandType = CommandType.StoredProcedure
                     };
 
-                    // Pasar los parámetros al procedimiento almacenado
-                    cmd.Parameters.AddWithValue("@Nombre", objeto.Nombre);
-                    cmd.Parameters.AddWithValue("@Tipo", objeto.Tipo);
-                    cmd.Parameters.AddWithValue("@Marca", objeto.Marca);
+                    // Asegúrate de pasar correctamente todos los parámetros
+                    cmd.Parameters.AddWithValue("@Nombre", objeto.Nombre ?? string.Empty);
+                    cmd.Parameters.AddWithValue("@Tipo", objeto.Tipo ?? string.Empty);
+                    cmd.Parameters.AddWithValue("@Marca", objeto.Marca ?? string.Empty);
                     cmd.Parameters.AddWithValue("@Precio", objeto.Precio);
                     cmd.Parameters.AddWithValue("@CantidadDisponible", objeto.CantidadDisponible);
-                    cmd.Parameters.AddWithValue("@Descripcion", objeto.Descripcion);
+                    cmd.Parameters.AddWithValue("@Descripcion", objeto.Descripcion ?? string.Empty);
                     cmd.Parameters.AddWithValue("@FechaCaducidad", objeto.FechaCaducidad ?? (object)DBNull.Value);
 
                     await conexion.OpenAsync();  // Abrir la conexión de manera asíncrona
 
                     // Ejecutar el procedimiento y verificar si afectó filas
-                    respuesta = await cmd.ExecuteNonQueryAsync() > 0;
+                    int rowsAffected = await cmd.ExecuteNonQueryAsync();
+                    if (rowsAffected > 0)
+                    {
+                        respuesta = true;
+                    }
                 }
             }
             catch (SqlException sqlEx)
             {
-                Console.WriteLine("Error al crear el producto: " + sqlEx.Message);
+                // Log para detalles de error de SQL
+                Console.WriteLine($"Error SQL: {sqlEx.Message}");
                 respuesta = false;
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Error general: " + ex.Message);
+                // Log para otros errores
+                Console.WriteLine($"Error general: {ex.Message}");
                 respuesta = false;
             }
 
             return respuesta;
         }
+
+
 
         // Editar un producto existente utilizando un procedimiento almacenado
         public async Task<bool> Editar(Producto objeto)

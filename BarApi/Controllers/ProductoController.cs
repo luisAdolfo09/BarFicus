@@ -1,7 +1,9 @@
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using ProyectoData;
 using SharedModels;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Threading.Tasks;
 
 namespace BarApi.Controllers
@@ -10,12 +12,15 @@ namespace BarApi.Controllers
     [ApiController]
     public class ProductoController : ControllerBase
     {
+        private readonly ILogger<ProductoController> _logger;
         private readonly ProductoData _productoData;
+        private readonly ILogger<ProductoController>? logger;
 
         // Constructor para inyectar ProductoData
         public ProductoController(ProductoData productoData)
         {
             _productoData = productoData;
+            _logger = logger;
         }
 
         // GET: api/Producto
@@ -24,6 +29,7 @@ namespace BarApi.Controllers
         {
             try
             {
+
                 var productos = await _productoData.Lista();
                 if (productos == null || productos.Count == 0)
                 {
@@ -72,6 +78,16 @@ namespace BarApi.Controllers
                     return BadRequest("El producto no puede ser nulo.");
                 }
 
+                // Asegúrate de que los datos son válidos
+                if (string.IsNullOrWhiteSpace(nuevoProducto.Nombre) ||
+                    string.IsNullOrWhiteSpace(nuevoProducto.Tipo) ||
+                    nuevoProducto.Precio <= 0 ||
+                    nuevoProducto.CantidadDisponible < 0)
+                {
+                    return BadRequest("Algunos de los datos proporcionados son incorrectos.");
+                }
+
+                // Intentar crear el producto
                 var resultado = await _productoData.Crear(nuevoProducto);
                 if (resultado)
                 {
@@ -79,12 +95,20 @@ namespace BarApi.Controllers
                 }
                 else
                 {
-                    return BadRequest("No se pudo crear el producto.");
+                    // Aquí capturamos detalles más específicos del error
+                    return BadRequest("No se pudo crear el producto. Revisa la base de datos o los datos proporcionados.");
                 }
             }
-            catch (System.Exception ex)
+            catch (SqlException sqlEx)
             {
-                return StatusCode(500, $"Error en el servidor: {ex.Message}");
+                // Capturar errores específicos de SQL y proporcionar más detalles
+                return StatusCode(500, $"Error en la base de datos: {sqlEx.Message}");
+
+            }
+            catch (Exception ex)
+            {
+                // Captura errores generales
+                return StatusCode(500, $"Error general: {ex.Message}");
             }
         }
 

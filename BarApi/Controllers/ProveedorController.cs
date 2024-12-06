@@ -7,7 +7,7 @@ using SharedModels;
 namespace ProyectoWebAPI.Controllers
 {
     [Route("api/[controller]")]
-    [Authorize]
+   /// [Authorize]
     [ApiController]
     public class ProveedorController : ControllerBase
     {
@@ -24,7 +24,7 @@ namespace ProyectoWebAPI.Controllers
         public async Task<IActionResult> Lista()
         {
             // Obtiene la lista de proveedores desde la capa de datos
-            List<Proveedor> lista = await _proveedorData.Lista();
+            List<Proveedor> lista = (List<Proveedor>)await _proveedorData.Lista();
 
             // Si la lista está vacía, responde con un código 204 (No Content)
             if (lista == null || lista.Count == 0)

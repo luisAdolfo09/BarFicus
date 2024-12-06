@@ -1,8 +1,8 @@
 ﻿using Microsoft.Extensions.Options;
 using System.Data.SqlClient;
 using System.Data;
-using DatabaseProyect;  
-using SharedModels;    
+using DatabaseProyect;
+using SharedModels;
 
 namespace ProyectoData
 {
@@ -14,53 +14,6 @@ namespace ProyectoData
         public ProveedorData(IOptions<ConnectionStrings> options)
         {
             _conexiones = options.Value;
-        }
-
-        // Obtener la lista de proveedores usando un procedimiento almacenado
-        public async Task<List<Proveedor>> Lista()
-        {
-            List<Proveedor> lista = new List<Proveedor>();
-
-            try
-            {
-                using (var conexion = new SqlConnection(_conexiones.CadenaSQL))
-                {
-                    await conexion.OpenAsync();  // Abrir la conexión de manera asíncrona
-
-                    // Llamar al procedimiento almacenado que obtiene los proveedores
-                    SqlCommand cmd = new SqlCommand("sp_listaProveedores", conexion)
-                    {
-                        CommandType = CommandType.StoredProcedure
-                    };
-
-                    // Ejecutar el procedimiento almacenado y leer los datos
-                    using (var reader = await cmd.ExecuteReaderAsync())
-                    {
-                        while (await reader.ReadAsync())
-                        {
-                            lista.Add(new Proveedor
-                            {
-                                IdProveedor = reader.GetInt32(reader.GetOrdinal("IdProveedor")),
-                                Nombre = reader["Nombre"].ToString(),
-                                Contacto = reader["Contacto"].ToString(),
-                                Telefono = reader["Telefono"].ToString(),
-                                Direccion = reader["Direccion"].ToString(),
-                                Correo = reader["Correo"].ToString()
-                            });
-                        }
-                    }
-                }
-            }
-            catch (SqlException sqlEx)
-            {
-                Console.WriteLine("Error en la consulta SQL: " + sqlEx.Message);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Error general: " + ex.Message);
-            }
-
-            return lista;
         }
 
         // Crear un nuevo proveedor utilizando un procedimiento almacenado
@@ -84,10 +37,25 @@ namespace ProyectoData
                     cmd.Parameters.AddWithValue("@Direccion", objeto.Direccion);
                     cmd.Parameters.AddWithValue("@Correo", objeto.Correo);
 
+                    // Agregar un parámetro de salida para obtener el IdProveedor
+                    SqlParameter outputIdParam = new SqlParameter("@IdProveedor", SqlDbType.Int)
+                    {
+                        Direction = ParameterDirection.Output
+                    };
+                    cmd.Parameters.Add(outputIdParam);
+
                     await conexion.OpenAsync();  // Abrir la conexión de manera asíncrona
 
                     // Ejecutar el procedimiento y verificar si afectó filas
-                    respuesta = await cmd.ExecuteNonQueryAsync() > 0;
+                    if (await cmd.ExecuteNonQueryAsync() > 0)
+                    {
+                        // Asignar el IdProveedor al objeto recibido
+                        objeto.IdProveedor = (int)outputIdParam.Value;
+                    }
+                    else
+                    {
+                        respuesta = false;
+                    }
                 }
             }
             catch (SqlException sqlEx)
@@ -104,7 +72,6 @@ namespace ProyectoData
             return respuesta;
         }
 
-        // Editar un proveedor existente utilizando un procedimiento almacenado
         public async Task<bool> Editar(Proveedor objeto)
         {
             bool respuesta = true;
@@ -146,7 +113,6 @@ namespace ProyectoData
             return respuesta;
         }
 
-        // Eliminar un proveedor utilizando un procedimiento almacenado
         public async Task<bool> Eliminar(int id)
         {
             bool respuesta = true;
@@ -182,5 +148,52 @@ namespace ProyectoData
 
             return respuesta;
         }
+
+        public async Task<object> Lista()
+        {
+            List<Proveedor> lista = new List<Proveedor>();
+
+            try
+            {
+                using (var conexion = new SqlConnection(_conexiones.CadenaSQL))
+                {
+                    await conexion.OpenAsync();  // Abrir la conexión de manera asíncrona
+
+                    // Llamar al procedimiento almacenado que obtiene los proveedores
+                    SqlCommand cmd = new SqlCommand("sp_listaProveedores", conexion)
+                    {
+                        CommandType = CommandType.StoredProcedure
+                    };
+
+                    // Ejecutar el procedimiento almacenado y leer los datos
+                    using (var reader = await cmd.ExecuteReaderAsync())
+                    {
+                        while (await reader.ReadAsync())
+                        {
+                            lista.Add(new Proveedor
+                            {
+                                IdProveedor = reader.GetInt32(reader.GetOrdinal("Id_Proveedor")),
+                                Nombre = reader["Nombre"].ToString(),
+                                Contacto = reader["Contacto"].ToString(),
+                                Telefono = reader["Telefono"].ToString(),
+                                Direccion = reader["Direccion"].ToString(),
+                            });
+                        }
+                    }
+                }
+            }
+            catch (SqlException sqlEx)
+            {
+                Console.WriteLine("Error en la consulta SQL: " + sqlEx.Message);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error general: " + ex.Message);
+            }
+
+            return lista;
+        }
     }
-}
+
+        // Otros métodos (Lista, Editar, Eliminar) permanecen igual.
+ }

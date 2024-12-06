@@ -1,8 +1,10 @@
 ﻿using Microsoft.Extensions.Options;
 using System.Data.SqlClient;
 using System.Data;
-using DatabaseProyect; 
-using SharedModels;   
+using SharedModels;
+using System.Threading.Tasks;
+using System.Collections.Generic;
+using DatabaseProyect;
 
 namespace ProyectoData
 {
@@ -25,15 +27,13 @@ namespace ProyectoData
             {
                 using (var conexion = new SqlConnection(_conexiones.CadenaSQL))
                 {
-                    await conexion.OpenAsync(); // Abrir la conexión de manera asíncrona
+                    await conexion.OpenAsync();
 
-                    // Llamar al procedimiento almacenado que obtiene las compras
                     SqlCommand cmd = new SqlCommand("sp_listaCompras", conexion)
                     {
                         CommandType = CommandType.StoredProcedure
                     };
 
-                    // Ejecutar el procedimiento almacenado y leer los datos
                     using (var reader = await cmd.ExecuteReaderAsync())
                     {
                         while (await reader.ReadAsync())
@@ -42,9 +42,10 @@ namespace ProyectoData
                             {
                                 IdCompra = reader.GetInt32(reader.GetOrdinal("Id_compra")),
                                 Fecha = reader.GetDateTime(reader.GetOrdinal("Fecha")),
-                                IdProveedor = reader.IsDBNull(reader.GetOrdinal("Id_proveedor")) ? (int?)null : reader.GetInt32(reader.GetOrdinal("IdProveedor")),
                                 Total = reader.GetDecimal(reader.GetOrdinal("Total")),
-                                Descripcion = reader["Descripcion"].ToString()
+                                Descripcion = reader["Descripcion"].ToString(),
+                                // Asignamos solo el IdProveedor, sin acceder a la entidad Proveedor
+                                IdProveedor = reader.IsDBNull(reader.GetOrdinal("Id_proveedor")) ? (int?)null : reader.GetInt32(reader.GetOrdinal("Id_proveedor"))
                             });
                         }
                     }
@@ -78,7 +79,7 @@ namespace ProyectoData
 
                     // Pasar los parámetros al procedimiento almacenado
                     cmd.Parameters.AddWithValue("@Fecha", objeto.Fecha);
-                    cmd.Parameters.AddWithValue("@IdProveedor", (object)objeto.IdProveedor ?? DBNull.Value);
+                    cmd.Parameters.AddWithValue("@IdProveedor", (object)objeto.IdProveedor ?? DBNull.Value); // Solo se pasa el IdProveedor
                     cmd.Parameters.AddWithValue("@Total", objeto.Total);
                     cmd.Parameters.AddWithValue("@Descripcion", objeto.Descripcion);
 
@@ -119,7 +120,7 @@ namespace ProyectoData
                     // Pasar los parámetros al procedimiento almacenado
                     cmd.Parameters.AddWithValue("@IdCompra", objeto.IdCompra);
                     cmd.Parameters.AddWithValue("@Fecha", objeto.Fecha);
-                    cmd.Parameters.AddWithValue("@IdProveedor", (object)objeto.IdProveedor ?? DBNull.Value);
+                    cmd.Parameters.AddWithValue("@IdProveedor", (object)objeto.IdProveedor ?? DBNull.Value); // Solo se pasa el IdProveedor
                     cmd.Parameters.AddWithValue("@Total", objeto.Total);
                     cmd.Parameters.AddWithValue("@Descripcion", objeto.Descripcion);
 
