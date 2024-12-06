@@ -1,6 +1,6 @@
 ﻿namespace FormularioApp
 {
-    partial class IngredientesForm
+    partial class IngredientesPlatilloForm
     {
         /// <summary>
         /// Required designer variable.
@@ -13,11 +13,11 @@
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
-            if (disposing && (components != null))
-            {
-                components.Dispose();
-            }
-            base.Dispose(disposing);
+            //if (disposing && (components != null))
+            //{
+            //    components.Dispose();
+            //}
+            //base.Dispose(disposing);
         }
 
         #region Windows Form Designer generated code
@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             linkLabel1 = new LinkLabel();
-            label1 = new Label();
-            label2 = new Label();
-            label3 = new Label();
-            label4 = new Label();
+            //label1 = new Label();
+            //label2 = new Label();
+            //label3 = new Label();
+            //label4 = new Label();
             label5 = new Label();
             label6 = new Label();
             txtFechaCaducidad = new TextBox();
@@ -45,10 +45,10 @@
             btnAgregar = new Button();
             btnEditar = new Button();
             btnEliminar = new Button();
-            panel1 = new Panel();
+            //panel1 = new Panel();
             label7 = new Label();
             ((System.ComponentModel.ISupportInitialize)dgvIngredientes).BeginInit();
-            panel1.SuspendLayout();
+            //panel1.SuspendLayout();
             SuspendLayout();
             // 
             // linkLabel1
@@ -58,45 +58,50 @@
             linkLabel1.Name = "linkLabel1";
             linkLabel1.Size = new Size(0, 20);
             linkLabel1.TabIndex = 0;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(112, 94);
-            label1.Name = "label1";
-            label1.Size = new Size(64, 20);
-            label1.TabIndex = 1;
-            label1.Text = "Nombre";
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new Point(400, 94);
-            label2.Name = "label2";
-            label2.Size = new Size(100, 20);
-            label2.TabIndex = 2;
-            label2.Text = "CostoUnitario";
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new Point(706, 94);
-            label3.Name = "label3";
-            label3.Size = new Size(141, 20);
-            label3.TabIndex = 3;
-            label3.Text = "CantidadDisponible";
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new Point(103, 211);
-            label4.Name = "label4";
-            label4.Size = new Size(87, 20);
-            label4.TabIndex = 4;
-            label4.Text = "Descripcion";
-            // 
-            // label5
-            // 
+
+            //label1
+
+
+            //label1.AutoSize = true;
+            //label1.Location = new Point(112, 94);
+            //label1.Name = "label1";
+            //label1.Size = new Size(64, 20);
+            //label1.TabIndex = 1;
+            //label1.Text = "Nombre";
+
+            //label2
+
+
+            //label2.AutoSize = true;
+            //label2.Location = new Point(400, 94);
+            //label2.Name = "label2";
+            //label2.Size = new Size(100, 20);
+            //label2.TabIndex = 2;
+            //label2.Text = "CostoUnitario";
+
+            //label3
+
+
+            //label3.AutoSize = true;
+            //label3.Location = new Point(706, 94);
+            //label3.Name = "label3";
+            //label3.Size = new Size(141, 20);
+            //label3.TabIndex = 3;
+            //label3.Text = "CantidadDisponible";
+
+            //label4
+
+
+            //label4.AutoSize = true;
+            //label4.Location = new Point(103, 211);
+            //label4.Name = "label4";
+            //label4.Size = new Size(87, 20);
+            //label4.TabIndex = 4;
+            //label4.Text = "Descripcion";
+
+            //label5
+
+
             label5.AutoSize = true;
             label5.Location = new Point(391, 211);
             label5.Name = "label5";
@@ -173,7 +178,7 @@
             btnAgregar.TabIndex = 14;
             btnAgregar.Text = "Agregar";
             btnAgregar.UseVisualStyleBackColor = true;
-            btnAgregar.Click += btnAgregar_Click;
+            //btnAgregar.Click += btnAgregar_Click;
             // 
             // btnEditar
             // 
@@ -183,7 +188,7 @@
             btnEditar.TabIndex = 15;
             btnEditar.Text = "Editar";
             btnEditar.UseVisualStyleBackColor = true;
-            btnEditar.Click += btnEditar_Click;
+            //btnEditar.Click += btnEditar_Click;
             // 
             // btnEliminar
             // 
@@ -193,18 +198,18 @@
             btnEliminar.TabIndex = 16;
             btnEliminar.Text = "Eliminar";
             btnEliminar.UseVisualStyleBackColor = true;
-            btnEliminar.Click += btnEliminar_Click;
+            ////btnEliminar.Click += btnEliminar_Click;
             // 
             // panel1
             // 
-            panel1.BackColor = Color.DarkSlateGray;
-            panel1.Controls.Add(label7);
-            panel1.Dock = DockStyle.Top;
-            panel1.ForeColor = SystemColors.ActiveBorder;
-            panel1.Location = new Point(0, 0);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(1101, 78);
-            panel1.TabIndex = 17;
+            //panel1.BackColor = Color.DarkSlateGray;
+            //panel1.Controls.Add(label7);
+            //panel1.Dock = DockStyle.Top;
+            //panel1.ForeColor = SystemColors.ActiveBorder;
+            //panel1.Location = new Point(0, 0);
+            //panel1.Name = "panel1";
+            //panel1.Size = new Size(1101, 78);
+            //panel1.TabIndex = 17;
             // 
             // label7
             // 
@@ -224,7 +229,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1101, 690);
-            Controls.Add(panel1);
+            //Controls.Add(panel1);
             Controls.Add(btnEliminar);
             Controls.Add(btnEditar);
             Controls.Add(btnAgregar);
@@ -237,16 +242,16 @@
             Controls.Add(txtFechaCaducidad);
             Controls.Add(label6);
             Controls.Add(label5);
-            Controls.Add(label4);
-            Controls.Add(label3);
-            Controls.Add(label2);
-            Controls.Add(label1);
+            //Controls.Add(label4);
+            //Controls.Add(label3);
+            //Controls.Add(label2);
+            //Controls.Add(label1);
             Controls.Add(linkLabel1);
             Name = "IngredientesForm";
             Text = "IngredientesForm";
             ((System.ComponentModel.ISupportInitialize)dgvIngredientes).EndInit();
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
+            //panel1.ResumeLayout(false);
+            //panel1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }

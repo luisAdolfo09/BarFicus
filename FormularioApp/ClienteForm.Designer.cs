@@ -35,7 +35,7 @@
             btnGuardarCliente = new FontAwesome.Sharp.IconButton();
             txtEmail = new TextBox();
             txtNumtelefono = new TextBox();
-            txtNombreCliente = new TextBox();
+            txtCliente = new TextBox();
             label4 = new Label();
             label3 = new Label();
             label2 = new Label();
@@ -84,7 +84,7 @@
             panel1.Controls.Add(btnGuardarCliente);
             panel1.Controls.Add(txtEmail);
             panel1.Controls.Add(txtNumtelefono);
-            panel1.Controls.Add(txtNombreCliente);
+            panel1.Controls.Add(txtCliente);
             panel1.Controls.Add(label4);
             panel1.Controls.Add(label3);
             panel1.Controls.Add(label2);
@@ -154,13 +154,13 @@
             txtNumtelefono.Size = new Size(194, 30);
             txtNumtelefono.TabIndex = 6;
             // 
-            // txtNombreCliente
+            // txtCliente
             // 
-            txtNombreCliente.Font = new Font("Segoe UI", 10.2F);
-            txtNombreCliente.Location = new Point(19, 186);
-            txtNombreCliente.Name = "txtNombreCliente";
-            txtNombreCliente.Size = new Size(194, 30);
-            txtNombreCliente.TabIndex = 5;
+            txtCliente.Font = new Font("Segoe UI", 10.2F);
+            txtCliente.Location = new Point(19, 186);
+            txtCliente.Name = "txtCliente";
+            txtCliente.Size = new Size(194, 30);
+            txtCliente.TabIndex = 5;
             // 
             // label4
             // 
@@ -358,7 +358,7 @@
         private FontAwesome.Sharp.IconButton btnGuardarCliente;
         private TextBox txtEmail;
         private TextBox txtNumtelefono;
-        private TextBox txtNombreCliente;
+        private TextBox txtCliente;
         private Label label4;
         private Label label3;
         private Label label2;

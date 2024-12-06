@@ -8,11 +8,11 @@ using SharedModels;
 
 namespace FormularioApp
 {
-    public partial class IngredientesForm : Form
+    public partial class IngredientesPlatilloForm : Form
     {
         private readonly IngredienteApiClient _apiClient;  // Cliente API para gestionar ingredientes
 
-        public IngredientesForm()
+        public IngredientesPlatilloForm()
         {
             InitializeComponent();
             _apiClient = new IngredienteApiClient();  // Cliente API configurado para ingredientes

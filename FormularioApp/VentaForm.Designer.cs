@@ -34,33 +34,33 @@
             label10 = new Label();
             label6 = new Label();
             panel3 = new Panel();
+            txtDetalle = new TextBox();
+            label9 = new Label();
+            btnEliminar = new FontAwesome.Sharp.IconButton();
+            btnEditar = new FontAwesome.Sharp.IconButton();
+            btnAgregar = new FontAwesome.Sharp.IconButton();
             panel1 = new Panel();
             txtCantidad = new TextBox();
             panel2 = new Panel();
+            label2 = new Label();
             label11 = new Label();
-            btnAgregar = new FontAwesome.Sharp.IconButton();
             cmbProducto = new ComboBox();
             label3 = new Label();
+            txtDescripcion = new TextBox();
             label4 = new Label();
             groupBox1 = new GroupBox();
-            label2 = new Label();
+            label8 = new Label();
             cmbEmpleado = new ComboBox();
             label1 = new Label();
             label7 = new Label();
             txtFecha = new DateTimePicker();
-            txtDescripcion = new TextBox();
             dgvVenta = new DataGridView();
-            tableLayoutPanel1 = new TableLayoutPanel();
-            label8 = new Label();
-            cmbCliente = new ComboBox();
-            btnEditar = new FontAwesome.Sharp.IconButton();
-            btnEliminar = new FontAwesome.Sharp.IconButton();
-            label9 = new Label();
-            txtDetalle = new TextBox();
             Producto = new DataGridViewTextBoxColumn();
             PrecioVenta = new DataGridViewTextBoxColumn();
             Cantidad = new DataGridViewTextBoxColumn();
             Subtotal = new DataGridViewTextBoxColumn();
+            tableLayoutPanel1 = new TableLayoutPanel();
+            txtCliente = new TextBox();
             panel3.SuspendLayout();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
@@ -143,6 +143,68 @@
             panel3.Size = new Size(508, 379);
             panel3.TabIndex = 25;
             // 
+            // txtDetalle
+            // 
+            txtDetalle.Location = new Point(21, 188);
+            txtDetalle.Name = "txtDetalle";
+            txtDetalle.Size = new Size(165, 27);
+            txtDetalle.TabIndex = 34;
+            // 
+            // label9
+            // 
+            label9.BackColor = Color.Silver;
+            label9.Font = new Font("Century Gothic", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label9.Location = new Point(22, 129);
+            label9.Name = "label9";
+            label9.Size = new Size(165, 37);
+            label9.TabIndex = 33;
+            label9.Text = "No. Detalle:";
+            label9.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // btnEliminar
+            // 
+            btnEliminar.BackColor = SystemColors.Control;
+            btnEliminar.FlatAppearance.BorderSize = 2;
+            btnEliminar.FlatStyle = FlatStyle.Flat;
+            btnEliminar.IconChar = FontAwesome.Sharp.IconChar.Trash;
+            btnEliminar.IconColor = Color.Black;
+            btnEliminar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnEliminar.Location = new Point(370, 25);
+            btnEliminar.Name = "btnEliminar";
+            btnEliminar.Size = new Size(101, 71);
+            btnEliminar.TabIndex = 32;
+            btnEliminar.Text = "Borrar";
+            btnEliminar.TextImageRelation = TextImageRelation.ImageAboveText;
+            btnEliminar.UseVisualStyleBackColor = false;
+            // 
+            // btnEditar
+            // 
+            btnEditar.IconChar = FontAwesome.Sharp.IconChar.Edit;
+            btnEditar.IconColor = Color.Black;
+            btnEditar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnEditar.Location = new Point(228, 25);
+            btnEditar.Name = "btnEditar";
+            btnEditar.Size = new Size(101, 71);
+            btnEditar.TabIndex = 31;
+            btnEditar.Text = "Editar";
+            btnEditar.TextAlign = ContentAlignment.BottomCenter;
+            btnEditar.TextImageRelation = TextImageRelation.ImageAboveText;
+            btnEditar.UseVisualStyleBackColor = true;
+            // 
+            // btnAgregar
+            // 
+            btnAgregar.IconChar = FontAwesome.Sharp.IconChar.PlusSquare;
+            btnAgregar.IconColor = Color.Black;
+            btnAgregar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnAgregar.Location = new Point(68, 25);
+            btnAgregar.Name = "btnAgregar";
+            btnAgregar.Size = new Size(101, 71);
+            btnAgregar.TabIndex = 29;
+            btnAgregar.Text = "Agregar";
+            btnAgregar.TextAlign = ContentAlignment.BottomCenter;
+            btnAgregar.TextImageRelation = TextImageRelation.ImageAboveText;
+            btnAgregar.UseVisualStyleBackColor = true;
+            // 
             // panel1
             // 
             panel1.Controls.Add(label5);
@@ -174,6 +236,17 @@
             panel2.Size = new Size(508, 234);
             panel2.TabIndex = 24;
             // 
+            // label2
+            // 
+            label2.BackColor = Color.Silver;
+            label2.Font = new Font("Century Gothic", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label2.Location = new Point(22, 128);
+            label2.Name = "label2";
+            label2.Size = new Size(183, 39);
+            label2.TabIndex = 14;
+            label2.Text = "Descripcion:";
+            label2.TextAlign = ContentAlignment.MiddleCenter;
+            // 
             // label11
             // 
             label11.BackColor = Color.Silver;
@@ -184,20 +257,6 @@
             label11.TabIndex = 30;
             label11.Text = "Cantidad:";
             label11.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // btnAgregar
-            // 
-            btnAgregar.IconChar = FontAwesome.Sharp.IconChar.PlusSquare;
-            btnAgregar.IconColor = Color.Black;
-            btnAgregar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnAgregar.Location = new Point(68, 25);
-            btnAgregar.Name = "btnAgregar";
-            btnAgregar.Size = new Size(101, 71);
-            btnAgregar.TabIndex = 29;
-            btnAgregar.Text = "Agregar";
-            btnAgregar.TextAlign = ContentAlignment.BottomCenter;
-            btnAgregar.TextImageRelation = TextImageRelation.ImageAboveText;
-            btnAgregar.UseVisualStyleBackColor = true;
             // 
             // cmbProducto
             // 
@@ -218,6 +277,13 @@
             label3.Text = "Producto:";
             label3.TextAlign = ContentAlignment.MiddleCenter;
             // 
+            // txtDescripcion
+            // 
+            txtDescripcion.Location = new Point(21, 190);
+            txtDescripcion.Name = "txtDescripcion";
+            txtDescripcion.Size = new Size(317, 27);
+            txtDescripcion.TabIndex = 4;
+            // 
             // label4
             // 
             label4.BackColor = Color.SeaGreen;
@@ -233,7 +299,7 @@
             // groupBox1
             // 
             groupBox1.BackColor = Color.CadetBlue;
-            groupBox1.Controls.Add(cmbCliente);
+            groupBox1.Controls.Add(txtCliente);
             groupBox1.Controls.Add(label8);
             groupBox1.Controls.Add(cmbEmpleado);
             groupBox1.Controls.Add(label1);
@@ -248,16 +314,16 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Informacion De Ventas:";
             // 
-            // label2
+            // label8
             // 
-            label2.BackColor = Color.Silver;
-            label2.Font = new Font("Century Gothic", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.Location = new Point(22, 128);
-            label2.Name = "label2";
-            label2.Size = new Size(183, 39);
-            label2.TabIndex = 14;
-            label2.Text = "Descripcion:";
-            label2.TextAlign = ContentAlignment.MiddleCenter;
+            label8.BackColor = Color.Silver;
+            label8.Font = new Font("Century Gothic", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label8.Location = new Point(378, 139);
+            label8.Name = "label8";
+            label8.Size = new Size(109, 39);
+            label8.TabIndex = 14;
+            label8.Text = "Cliente";
+            label8.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // cmbEmpleado
             // 
@@ -297,13 +363,6 @@
             txtFecha.Size = new Size(273, 26);
             txtFecha.TabIndex = 9;
             // 
-            // txtDescripcion
-            // 
-            txtDescripcion.Location = new Point(21, 190);
-            txtDescripcion.Name = "txtDescripcion";
-            txtDescripcion.Size = new Size(317, 27);
-            txtDescripcion.TabIndex = 4;
-            // 
             // dgvVenta
             // 
             dgvVenta.BackgroundColor = Color.CadetBlue;
@@ -315,91 +374,6 @@
             dgvVenta.RowHeadersWidth = 51;
             dgvVenta.Size = new Size(666, 379);
             dgvVenta.TabIndex = 21;
-            // 
-            // tableLayoutPanel1
-            // 
-            tableLayoutPanel1.ColumnCount = 2;
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 56.6610451F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 43.3389549F));
-            tableLayoutPanel1.Controls.Add(groupBox1, 0, 0);
-            tableLayoutPanel1.Controls.Add(dgvVenta, 0, 1);
-            tableLayoutPanel1.Controls.Add(panel2, 1, 0);
-            tableLayoutPanel1.Controls.Add(panel3, 1, 1);
-            tableLayoutPanel1.Dock = DockStyle.Bottom;
-            tableLayoutPanel1.Location = new Point(0, 83);
-            tableLayoutPanel1.Name = "tableLayoutPanel1";
-            tableLayoutPanel1.RowCount = 2;
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 38.4F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 61.6F));
-            tableLayoutPanel1.Size = new Size(1186, 625);
-            tableLayoutPanel1.TabIndex = 2;
-            // 
-            // label8
-            // 
-            label8.BackColor = Color.Silver;
-            label8.Font = new Font("Century Gothic", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label8.Location = new Point(378, 139);
-            label8.Name = "label8";
-            label8.Size = new Size(109, 39);
-            label8.TabIndex = 14;
-            label8.Text = "Cliente";
-            label8.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // cmbCliente
-            // 
-            cmbCliente.FormattingEnabled = true;
-            cmbCliente.Location = new Point(300, 187);
-            cmbCliente.Name = "cmbCliente";
-            cmbCliente.Size = new Size(279, 30);
-            cmbCliente.TabIndex = 15;
-            // 
-            // btnEditar
-            // 
-            btnEditar.IconChar = FontAwesome.Sharp.IconChar.Edit;
-            btnEditar.IconColor = Color.Black;
-            btnEditar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnEditar.Location = new Point(228, 25);
-            btnEditar.Name = "btnEditar";
-            btnEditar.Size = new Size(101, 71);
-            btnEditar.TabIndex = 31;
-            btnEditar.Text = "Editar";
-            btnEditar.TextAlign = ContentAlignment.BottomCenter;
-            btnEditar.TextImageRelation = TextImageRelation.ImageAboveText;
-            btnEditar.UseVisualStyleBackColor = true;
-            // 
-            // btnEliminar
-            // 
-            btnEliminar.BackColor = SystemColors.Control;
-            btnEliminar.FlatAppearance.BorderSize = 2;
-            btnEliminar.FlatStyle = FlatStyle.Flat;
-            btnEliminar.IconChar = FontAwesome.Sharp.IconChar.Trash;
-            btnEliminar.IconColor = Color.Black;
-            btnEliminar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnEliminar.Location = new Point(370, 25);
-            btnEliminar.Name = "btnEliminar";
-            btnEliminar.Size = new Size(101, 71);
-            btnEliminar.TabIndex = 32;
-            btnEliminar.Text = "Borrar";
-            btnEliminar.TextImageRelation = TextImageRelation.ImageAboveText;
-            btnEliminar.UseVisualStyleBackColor = false;
-            // 
-            // label9
-            // 
-            label9.BackColor = Color.Silver;
-            label9.Font = new Font("Century Gothic", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label9.Location = new Point(22, 129);
-            label9.Name = "label9";
-            label9.Size = new Size(165, 37);
-            label9.TabIndex = 33;
-            label9.Text = "No. Detalle:";
-            label9.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // txtDetalle
-            // 
-            txtDetalle.Location = new Point(21, 188);
-            txtDetalle.Name = "txtDetalle";
-            txtDetalle.Size = new Size(165, 27);
-            txtDetalle.TabIndex = 34;
             // 
             // Producto
             // 
@@ -429,6 +403,31 @@
             Subtotal.Name = "Subtotal";
             Subtotal.Width = 150;
             // 
+            // tableLayoutPanel1
+            // 
+            tableLayoutPanel1.ColumnCount = 2;
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 56.6610451F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 43.3389549F));
+            tableLayoutPanel1.Controls.Add(groupBox1, 0, 0);
+            tableLayoutPanel1.Controls.Add(dgvVenta, 0, 1);
+            tableLayoutPanel1.Controls.Add(panel2, 1, 0);
+            tableLayoutPanel1.Controls.Add(panel3, 1, 1);
+            tableLayoutPanel1.Dock = DockStyle.Bottom;
+            tableLayoutPanel1.Location = new Point(0, 83);
+            tableLayoutPanel1.Name = "tableLayoutPanel1";
+            tableLayoutPanel1.RowCount = 2;
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 38.4F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 61.6F));
+            tableLayoutPanel1.Size = new Size(1186, 625);
+            tableLayoutPanel1.TabIndex = 2;
+            // 
+            // txtCliente
+            // 
+            txtCliente.Location = new Point(300, 181);
+            txtCliente.Name = "txtCliente";
+            txtCliente.Size = new Size(279, 30);
+            txtCliente.TabIndex = 32;
+            // 
             // VentaForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -445,6 +444,7 @@
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvVenta).EndInit();
             tableLayoutPanel1.ResumeLayout(false);
             ResumeLayout(false);
@@ -475,7 +475,6 @@
         private TextBox txtDescripcion;
         private DataGridView dgvVenta;
         private TableLayoutPanel tableLayoutPanel1;
-        private ComboBox cmbCliente;
         private Label label8;
         private FontAwesome.Sharp.IconButton btnEditar;
         private TextBox txtDetalle;
@@ -485,5 +484,6 @@
         private DataGridViewTextBoxColumn PrecioVenta;
         private DataGridViewTextBoxColumn Cantidad;
         private DataGridViewTextBoxColumn Subtotal;
+        private TextBox txtCliente;
     }
 }

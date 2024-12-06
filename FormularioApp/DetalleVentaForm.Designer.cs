@@ -42,6 +42,9 @@
             btnAgregar = new FontAwesome.Sharp.IconButton();
             label5 = new Label();
             panel2 = new Panel();
+            txtCantidad = new TextBox();
+            label10 = new Label();
+            txtTipoPago = new TextBox();
             btnBuscarID = new FontAwesome.Sharp.IconButton();
             label3 = new Label();
             label4 = new Label();
@@ -52,9 +55,6 @@
             btnEliminar = new Button();
             btnEditar = new Button();
             dgvDetalleVenta = new DataGridView();
-            txtTipoPago = new TextBox();
-            label10 = new Label();
-            txtCantidad = new TextBox();
             NoVenta = new DataGridViewTextBoxColumn();
             ProductoDetalle = new DataGridViewTextBoxColumn();
             PrecioUnitario = new DataGridViewTextBoxColumn();
@@ -184,7 +184,7 @@
             btnAgregar.RightToLeft = RightToLeft.Yes;
             btnAgregar.Size = new Size(115, 36);
             btnAgregar.TabIndex = 22;
-            btnAgregar.Text = "iconButton1";
+            btnAgregar.Text = "Guardar";
             btnAgregar.UseVisualStyleBackColor = true;
             // 
             // label5
@@ -222,6 +222,30 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(1156, 130);
             panel2.TabIndex = 21;
+            // 
+            // txtCantidad
+            // 
+            txtCantidad.Location = new Point(624, 66);
+            txtCantidad.Name = "txtCantidad";
+            txtCantidad.Size = new Size(135, 27);
+            txtCantidad.TabIndex = 19;
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.BackColor = SystemColors.HighlightText;
+            label10.Location = new Point(651, 26);
+            label10.Name = "label10";
+            label10.Size = new Size(69, 20);
+            label10.TabIndex = 18;
+            label10.Text = "Cantidad";
+            // 
+            // txtTipoPago
+            // 
+            txtTipoPago.Location = new Point(307, 63);
+            txtTipoPago.Name = "txtTipoPago";
+            txtTipoPago.Size = new Size(125, 27);
+            txtTipoPago.TabIndex = 17;
             // 
             // btnBuscarID
             // 
@@ -319,30 +343,6 @@
             dgvDetalleVenta.RowHeadersWidth = 51;
             dgvDetalleVenta.Size = new Size(962, 258);
             dgvDetalleVenta.TabIndex = 19;
-            // 
-            // txtTipoPago
-            // 
-            txtTipoPago.Location = new Point(307, 63);
-            txtTipoPago.Name = "txtTipoPago";
-            txtTipoPago.Size = new Size(125, 27);
-            txtTipoPago.TabIndex = 17;
-            // 
-            // label10
-            // 
-            label10.AutoSize = true;
-            label10.BackColor = SystemColors.HighlightText;
-            label10.Location = new Point(651, 26);
-            label10.Name = "label10";
-            label10.Size = new Size(69, 20);
-            label10.TabIndex = 18;
-            label10.Text = "Cantidad";
-            // 
-            // txtCantidad
-            // 
-            txtCantidad.Location = new Point(624, 66);
-            txtCantidad.Name = "txtCantidad";
-            txtCantidad.Size = new Size(135, 27);
-            txtCantidad.TabIndex = 19;
             // 
             // NoVenta
             // 

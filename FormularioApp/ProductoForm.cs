@@ -26,7 +26,7 @@ namespace FormularioApp
         private async Task CargarProductos()
         {
             var productos = await _apiClient.ObtenerProductos();  // Método para obtener la lista de productos
-            dgvProducto.DataSource = productos;  // Asumimos que el DataGridView se llama dgvProducto
+            /*dgvProducto.DataSource = productos;*/  // Asumimos que el DataGridView se llama dgvProducto
         }
 
         private async void btnAgregar_Click(object sender, EventArgs e)
@@ -39,7 +39,7 @@ namespace FormularioApp
                 var nuevoProducto = new Producto
                 {
                     Nombre = txtNombreProducto.Text,
-                    Tipo = txtTipo.Text,
+                    Tipo = cmbTipo.Text,
                     Marca = txtMarca.Text,
                     Precio = precio,
                     CantidadDisponible = cantidad,
@@ -75,7 +75,7 @@ namespace FormularioApp
                 {
                     // Actualizamos los valores del producto seleccionado con los valores de los TextBox
                     productoSeleccionado.Nombre = txtNombreProducto.Text;
-                    productoSeleccionado.Tipo = txtTipo.Text;
+                    productoSeleccionado.Tipo = cmbTipo.Text;
                     productoSeleccionado.Marca = txtMarca.Text;
                     productoSeleccionado.Precio = decimal.Parse(txtPrecioProdcut.Text);
                     productoSeleccionado.CantidadDisponible = int.Parse(txtCantidadDisponible.Text);
@@ -130,7 +130,7 @@ namespace FormularioApp
                 {
                     // Cargamos los datos del producto seleccionado en los TextBox
                     txtNombreProducto.Text = productoSeleccionado.Nombre;
-                    txtTipo.Text = productoSeleccionado.Tipo;
+                    cmbTipo.Text = productoSeleccionado.Tipo;
                     txtMarca.Text = productoSeleccionado.Marca;
                     txtPrecioProdcut.Text = productoSeleccionado.Precio.ToString("0.00");
                     txtCantidadDisponible.Text = productoSeleccionado.CantidadDisponible.ToString();

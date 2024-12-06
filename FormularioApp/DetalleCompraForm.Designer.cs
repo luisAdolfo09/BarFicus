@@ -37,30 +37,30 @@
             txtCantidaddt = new TextBox();
             txtPrecioUnitdt = new TextBox();
             dgvDetalleCompra = new DataGridView();
-            panel1 = new Panel();
-            panel2 = new Panel();
-            label5 = new Label();
-            btnAgregardt = new FontAwesome.Sharp.IconButton();
-            btnBuscarID = new FontAwesome.Sharp.IconButton();
-            label6 = new Label();
-            textBox1 = new TextBox();
-            label7 = new Label();
-            iconButton1 = new FontAwesome.Sharp.IconButton();
-            btnPDF = new FontAwesome.Sharp.IconButton();
-            label8 = new Label();
-            txtMontoTotal = new TextBox();
-            comboBox1 = new ComboBox();
-            textBox2 = new TextBox();
             ProductoDetalle = new DataGridViewTextBoxColumn();
             PrecioCompra = new DataGridViewTextBoxColumn();
             CantidadDetalle = new DataGridViewTextBoxColumn();
             SubTotalDetalle = new DataGridViewTextBoxColumn();
-            iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
+            panel1 = new Panel();
             label9 = new Label();
+            iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
+            label5 = new Label();
+            panel2 = new Panel();
+            textBox2 = new TextBox();
+            comboBox1 = new ComboBox();
+            iconButton1 = new FontAwesome.Sharp.IconButton();
+            label7 = new Label();
+            textBox1 = new TextBox();
+            label6 = new Label();
+            btnBuscarID = new FontAwesome.Sharp.IconButton();
+            btnAgregardt = new FontAwesome.Sharp.IconButton();
+            btnPDF = new FontAwesome.Sharp.IconButton();
+            label8 = new Label();
+            txtMontoTotal = new TextBox();
             ((System.ComponentModel.ISupportInitialize)dgvDetalleCompra).BeginInit();
             panel1.SuspendLayout();
-            panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).BeginInit();
+            panel2.SuspendLayout();
             SuspendLayout();
             // 
             // btnEditardt
@@ -149,6 +149,34 @@
             dgvDetalleCompra.TabIndex = 11;
             dgvDetalleCompra.CellContentClick += dgvDetalleCompra_CellContentClick;
             // 
+            // ProductoDetalle
+            // 
+            ProductoDetalle.HeaderText = "Producto";
+            ProductoDetalle.MinimumWidth = 6;
+            ProductoDetalle.Name = "ProductoDetalle";
+            ProductoDetalle.Width = 155;
+            // 
+            // PrecioCompra
+            // 
+            PrecioCompra.HeaderText = "Precio de Compra";
+            PrecioCompra.MinimumWidth = 6;
+            PrecioCompra.Name = "PrecioCompra";
+            PrecioCompra.Width = 175;
+            // 
+            // CantidadDetalle
+            // 
+            CantidadDetalle.HeaderText = "Cantidad";
+            CantidadDetalle.MinimumWidth = 6;
+            CantidadDetalle.Name = "CantidadDetalle";
+            CantidadDetalle.Width = 170;
+            // 
+            // SubTotalDetalle
+            // 
+            SubTotalDetalle.HeaderText = "Sub Total";
+            SubTotalDetalle.MinimumWidth = 6;
+            SubTotalDetalle.Name = "SubTotalDetalle";
+            SubTotalDetalle.Width = 155;
+            // 
             // panel1
             // 
             panel1.Controls.Add(label9);
@@ -159,6 +187,44 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(974, 81);
             panel1.TabIndex = 12;
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Font = new Font("Century Gothic", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label9.ForeColor = SystemColors.ButtonHighlight;
+            label9.Location = new Point(99, 26);
+            label9.Name = "label9";
+            label9.Size = new Size(226, 27);
+            label9.TabIndex = 17;
+            label9.Text = "Detalle de Compra";
+            // 
+            // iconPictureBox1
+            // 
+            iconPictureBox1.BackColor = SystemColors.HighlightText;
+            iconPictureBox1.ForeColor = SystemColors.ControlText;
+            iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.CartShopping;
+            iconPictureBox1.IconColor = SystemColors.ControlText;
+            iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconPictureBox1.IconSize = 49;
+            iconPictureBox1.Location = new Point(24, 12);
+            iconPictureBox1.Name = "iconPictureBox1";
+            iconPictureBox1.Size = new Size(59, 49);
+            iconPictureBox1.TabIndex = 17;
+            iconPictureBox1.TabStop = false;
+            // 
+            // label5
+            // 
+            label5.BackColor = SystemColors.Highlight;
+            label5.Dock = DockStyle.Fill;
+            label5.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label5.ForeColor = SystemColors.ButtonHighlight;
+            label5.Location = new Point(0, 0);
+            label5.Name = "label5";
+            label5.Size = new Size(974, 81);
+            label5.TabIndex = 0;
+            label5.TextAlign = ContentAlignment.MiddleCenter;
+            label5.Click += label5_Click;
             // 
             // panel2
             // 
@@ -182,31 +248,57 @@
             panel2.Size = new Size(974, 130);
             panel2.TabIndex = 13;
             // 
-            // label5
+            // textBox2
             // 
-            label5.BackColor = SystemColors.Highlight;
-            label5.Dock = DockStyle.Fill;
-            label5.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.ForeColor = SystemColors.ButtonHighlight;
-            label5.Location = new Point(0, 0);
-            label5.Name = "label5";
-            label5.Size = new Size(974, 81);
-            label5.TabIndex = 0;
-            label5.TextAlign = ContentAlignment.MiddleCenter;
-            label5.Click += label5_Click;
+            textBox2.Location = new Point(318, 75);
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(125, 27);
+            textBox2.TabIndex = 16;
             // 
-            // btnAgregardt
+            // comboBox1
             // 
-            btnAgregardt.IconChar = FontAwesome.Sharp.IconChar.None;
-            btnAgregardt.IconColor = Color.Black;
-            btnAgregardt.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnAgregardt.Location = new Point(846, 228);
-            btnAgregardt.Name = "btnAgregardt";
-            btnAgregardt.RightToLeft = RightToLeft.Yes;
-            btnAgregardt.Size = new Size(94, 36);
-            btnAgregardt.TabIndex = 14;
-            btnAgregardt.Text = "iconButton1";
-            btnAgregardt.UseVisualStyleBackColor = true;
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(8, 83);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(151, 28);
+            comboBox1.TabIndex = 15;
+            // 
+            // iconButton1
+            // 
+            iconButton1.IconChar = FontAwesome.Sharp.IconChar.Eraser;
+            iconButton1.IconColor = Color.Black;
+            iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconButton1.Location = new Point(239, 63);
+            iconButton1.Name = "iconButton1";
+            iconButton1.Size = new Size(39, 46);
+            iconButton1.TabIndex = 14;
+            iconButton1.UseVisualStyleBackColor = true;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.BackColor = SystemColors.HighlightText;
+            label7.Location = new Point(822, 36);
+            label7.Name = "label7";
+            label7.Size = new Size(59, 20);
+            label7.TabIndex = 13;
+            label7.Text = "Usuario";
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(795, 73);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(128, 27);
+            textBox1.TabIndex = 12;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.BackColor = SystemColors.HighlightText;
+            label6.Location = new Point(749, 36);
+            label6.Name = "label6";
+            label6.Size = new Size(0, 20);
+            label6.TabIndex = 11;
             // 
             // btnBuscarID
             // 
@@ -219,42 +311,18 @@
             btnBuscarID.TabIndex = 8;
             btnBuscarID.UseVisualStyleBackColor = true;
             // 
-            // label6
+            // btnAgregardt
             // 
-            label6.AutoSize = true;
-            label6.BackColor = SystemColors.HighlightText;
-            label6.Location = new Point(749, 36);
-            label6.Name = "label6";
-            label6.Size = new Size(0, 20);
-            label6.TabIndex = 11;
-            // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(795, 73);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(128, 27);
-            textBox1.TabIndex = 12;
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.BackColor = SystemColors.HighlightText;
-            label7.Location = new Point(822, 36);
-            label7.Name = "label7";
-            label7.Size = new Size(59, 20);
-            label7.TabIndex = 13;
-            label7.Text = "Usuario";
-            // 
-            // iconButton1
-            // 
-            iconButton1.IconChar = FontAwesome.Sharp.IconChar.Eraser;
-            iconButton1.IconColor = Color.Black;
-            iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton1.Location = new Point(239, 63);
-            iconButton1.Name = "iconButton1";
-            iconButton1.Size = new Size(39, 46);
-            iconButton1.TabIndex = 14;
-            iconButton1.UseVisualStyleBackColor = true;
+            btnAgregardt.IconChar = FontAwesome.Sharp.IconChar.None;
+            btnAgregardt.IconColor = Color.Black;
+            btnAgregardt.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnAgregardt.Location = new Point(846, 228);
+            btnAgregardt.Name = "btnAgregardt";
+            btnAgregardt.RightToLeft = RightToLeft.Yes;
+            btnAgregardt.Size = new Size(94, 36);
+            btnAgregardt.TabIndex = 14;
+            btnAgregardt.Text = "Guadar";
+            btnAgregardt.UseVisualStyleBackColor = true;
             // 
             // btnPDF
             // 
@@ -285,74 +353,6 @@
             txtMontoTotal.Size = new Size(125, 27);
             txtMontoTotal.TabIndex = 16;
             // 
-            // comboBox1
-            // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(8, 83);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(151, 28);
-            comboBox1.TabIndex = 15;
-            // 
-            // textBox2
-            // 
-            textBox2.Location = new Point(318, 75);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(125, 27);
-            textBox2.TabIndex = 16;
-            // 
-            // ProductoDetalle
-            // 
-            ProductoDetalle.HeaderText = "Producto";
-            ProductoDetalle.MinimumWidth = 6;
-            ProductoDetalle.Name = "ProductoDetalle";
-            ProductoDetalle.Width = 155;
-            // 
-            // PrecioCompra
-            // 
-            PrecioCompra.HeaderText = "Precio de Compra";
-            PrecioCompra.MinimumWidth = 6;
-            PrecioCompra.Name = "PrecioCompra";
-            PrecioCompra.Width = 175;
-            // 
-            // CantidadDetalle
-            // 
-            CantidadDetalle.HeaderText = "Cantidad";
-            CantidadDetalle.MinimumWidth = 6;
-            CantidadDetalle.Name = "CantidadDetalle";
-            CantidadDetalle.Width = 170;
-            // 
-            // SubTotalDetalle
-            // 
-            SubTotalDetalle.HeaderText = "Sub Total";
-            SubTotalDetalle.MinimumWidth = 6;
-            SubTotalDetalle.Name = "SubTotalDetalle";
-            SubTotalDetalle.Width = 155;
-            // 
-            // iconPictureBox1
-            // 
-            iconPictureBox1.BackColor = SystemColors.HighlightText;
-            iconPictureBox1.ForeColor = SystemColors.ControlText;
-            iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.CartShopping;
-            iconPictureBox1.IconColor = SystemColors.ControlText;
-            iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconPictureBox1.IconSize = 55;
-            iconPictureBox1.Location = new Point(24, 12);
-            iconPictureBox1.Name = "iconPictureBox1";
-            iconPictureBox1.Size = new Size(59, 49);
-            iconPictureBox1.TabIndex = 17;
-            iconPictureBox1.TabStop = false;
-            // 
-            // label9
-            // 
-            label9.AutoSize = true;
-            label9.Font = new Font("Century Gothic", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label9.ForeColor = SystemColors.ButtonHighlight;
-            label9.Location = new Point(99, 26);
-            label9.Name = "label9";
-            label9.Size = new Size(226, 27);
-            label9.TabIndex = 17;
-            label9.Text = "Detalle de Compra";
-            // 
             // DetalleCompraForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -374,9 +374,9 @@
             ((System.ComponentModel.ISupportInitialize)dgvDetalleCompra).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox1).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)iconPictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }

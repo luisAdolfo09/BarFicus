@@ -26,12 +26,14 @@ namespace FormularioApp
 
         private void hideSubMenu()
         {
-            if (panelSubMenu.Visible = true)
+            if (panelSubMenu.Visible == true)
                 panelSubMenu.Visible = false;
-            if (panelNegocio.Visible = true)
+            if (panelNegocio.Visible == true)
                 panelNegocio.Visible = false;
-            if (panelInventario.Visible = true)
+            if (panelInventario.Visible == true)
                 panelInventario.Visible = false;
+            if (panelDetalles.Visible == true)
+                panelDetalles.Visible = false;
         }
 
         private void ShowSubMenu(Panel subMenu)
@@ -145,14 +147,9 @@ namespace FormularioApp
 
         private void btnPlatillos_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void Ingredientes_Click(object sender, EventArgs e)
-        {
             try
             {
-                openChildForm(new IngredientesForm());
+                openChildForm(new IngredientesPlatilloForm());
                 hideSubMenu();
             }
             catch (Exception ex)
@@ -161,6 +158,71 @@ namespace FormularioApp
             }
         }
 
-        
+        private void Ingredientes_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void IniForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                openChildForm(new ClienteForm());
+                hideSubMenu();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Se produjo un error: " + ex.Message);
+            }
+        }
+
+        private void btnProducto_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                openChildForm(new ProductoForm());
+                hideSubMenu();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Se produjo un error: " + ex.Message);
+            }
+        }
+
+        private void btnDetalles_Click(object sender, EventArgs e)
+        {
+            ShowSubMenu(panelDetalles);
+        }
+
+        private void iconButton2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                openChildForm(new ());
+                hideSubMenu();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Se produjo un error: " + ex.Message);
+            }
+        }
+
+        private void iconButton3_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                openChildForm(new ());
+                hideSubMenu();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Se produjo un error: " + ex.Message);
+            }
+        }
     }
 }

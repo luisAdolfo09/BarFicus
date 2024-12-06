@@ -40,7 +40,7 @@ namespace FormularioApp
                 var nuevoDetalleCompra = new DetalleCompra
                 {
                     IdCompra = _idCompra,
-                    IdProducto = int.Parse(txtProductodt.Text),  // Asumimos que el ID del producto se ingresa en este TextBox
+                   /* IdProducto = int.Parse(txtProductodt.Text),*/  // Asumimos que el ID del producto se ingresa en este TextBox
                     Cantidad = cantidad,
                     PrecioUnitario = precioUnitario
                 };
@@ -122,7 +122,7 @@ namespace FormularioApp
                 if (detalleCompraSeleccionado != null)
                 {
                     // Cargamos los datos del detalle de compra seleccionado en los TextBox
-                    txtProductodt.Text = detalleCompraSeleccionado.IdProducto.ToString();
+                    //txtNombreProducto.Text = detalleCompraSeleccionado.IdProducto.ToString();
                     txtCantidaddt.Text = detalleCompraSeleccionado.Cantidad.ToString();
                     txtPrecioUnitdt.Text = detalleCompraSeleccionado.PrecioUnitario.ToString("F2");
                 }

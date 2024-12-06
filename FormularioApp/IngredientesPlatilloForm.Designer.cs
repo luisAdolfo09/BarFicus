@@ -29,16 +29,18 @@
         private void InitializeComponent()
         {
             pictureBox1 = new PictureBox();
-            panel1 = new Panel();
-            label1 = new Label();
-            label2 = new Label();
-            textBox1 = new TextBox();
+            //panel1 = new Panel();
+            //label1 = new Label();
+            //label2 = new Label();
+            txtIngredientesPlatillo = new TextBox();
             label3 = new Label();
             comboBox1 = new ComboBox();
             label4 = new Label();
-            textBox2 = new TextBox();
+            txtCantidadNecesario = new TextBox();
+            dgvIngredientesPlatillo = new DataGridView();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvIngredientesPlatillo).BeginInit();
             SuspendLayout();
             // 
             // pictureBox1
@@ -85,12 +87,12 @@
             label2.TabIndex = 2;
             label2.Text = "Nombre del platillo:";
             // 
-            // textBox1
+            // txtIngredientesPlatillo
             // 
-            textBox1.Location = new Point(185, 326);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(191, 27);
-            textBox1.TabIndex = 3;
+            txtIngredientesPlatillo.Location = new Point(185, 326);
+            txtIngredientesPlatillo.Name = "txtIngredientesPlatillo";
+            txtIngredientesPlatillo.Size = new Size(191, 27);
+            txtIngredientesPlatillo.TabIndex = 3;
             // 
             // label3
             // 
@@ -119,24 +121,34 @@
             label4.TabIndex = 6;
             label4.Text = "Cantidad:";
             // 
-            // textBox2
+            // txtCantidadNecesario
             // 
-            textBox2.Location = new Point(185, 374);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(125, 27);
-            textBox2.TabIndex = 7;
+            txtCantidadNecesario.Location = new Point(185, 374);
+            txtCantidadNecesario.Name = "txtCantidadNecesario";
+            txtCantidadNecesario.Size = new Size(125, 27);
+            txtCantidadNecesario.TabIndex = 7;
+            // 
+            // dgvIngredientesPlatillo
+            // 
+            dgvIngredientesPlatillo.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvIngredientesPlatillo.Location = new Point(29, 433);
+            dgvIngredientesPlatillo.Name = "dgvIngredientesPlatillo";
+            dgvIngredientesPlatillo.RowHeadersWidth = 51;
+            dgvIngredientesPlatillo.Size = new Size(596, 274);
+            dgvIngredientesPlatillo.TabIndex = 8;
             // 
             // IngredientesPlatilloForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlDarkDark;
-            ClientSize = new Size(738, 577);
-            Controls.Add(textBox2);
+            ClientSize = new Size(738, 739);
+            Controls.Add(dgvIngredientesPlatillo);
+            Controls.Add(txtCantidadNecesario);
             Controls.Add(label4);
             Controls.Add(comboBox1);
             Controls.Add(label3);
-            Controls.Add(textBox1);
+            Controls.Add(txtIngredientesPlatillo);
             Controls.Add(label2);
             Controls.Add(panel1);
             Controls.Add(pictureBox1);
@@ -145,6 +157,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvIngredientesPlatillo).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -155,10 +168,11 @@
         private Panel panel1;
         private Label label1;
         private Label label2;
-        private TextBox textBox1;
+        private TextBox txtIngredientesPlatillo;
         private Label label3;
         private ComboBox comboBox1;
         private Label label4;
-        private TextBox textBox2;
+        private TextBox txtCantidadNecesario;
+        private DataGridView dgvIngredientesPlatillo;
     }
 }
