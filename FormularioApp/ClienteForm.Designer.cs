@@ -42,19 +42,22 @@
             iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             label1 = new Label();
             panel2 = new Panel();
-            dgvClientes = new DataGridView();
             panel3 = new Panel();
-            label5 = new Label();
-            comboFiltro = new ComboBox();
-            iconButton3 = new FontAwesome.Sharp.IconButton();
-            iconButton4 = new FontAwesome.Sharp.IconButton();
             txtFlitroCliente = new TextBox();
+            btnLimpiar = new FontAwesome.Sharp.IconButton();
+            btnBusqueda = new FontAwesome.Sharp.IconButton();
+            comboFiltro = new ComboBox();
+            label5 = new Label();
+            dgvClientes = new DataGridView();
+            NombreCliente = new DataGridViewTextBoxColumn();
+            telefono = new DataGridViewTextBoxColumn();
+            emailCliente = new DataGridViewTextBoxColumn();
             tableLayoutPanel1.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).BeginInit();
             panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dgvClientes).BeginInit();
             panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvClientes).BeginInit();
             SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -70,7 +73,7 @@
             tableLayoutPanel1.RowCount = 1;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tableLayoutPanel1.Size = new Size(1020, 554);
+            tableLayoutPanel1.Size = new Size(1024, 554);
             tableLayoutPanel1.TabIndex = 0;
             // 
             // panel1
@@ -90,7 +93,7 @@
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(3, 3);
             panel1.Name = "panel1";
-            panel1.Size = new Size(292, 548);
+            panel1.Size = new Size(293, 548);
             panel1.TabIndex = 0;
             // 
             // btnEditarCliente
@@ -219,44 +222,59 @@
             panel2.Controls.Add(panel3);
             panel2.Controls.Add(dgvClientes);
             panel2.Dock = DockStyle.Fill;
-            panel2.Location = new Point(301, 3);
+            panel2.Location = new Point(302, 3);
             panel2.Name = "panel2";
-            panel2.Size = new Size(716, 548);
+            panel2.Size = new Size(719, 548);
             panel2.TabIndex = 1;
-            // 
-            // dgvClientes
-            // 
-            dgvClientes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvClientes.Location = new Point(20, 160);
-            dgvClientes.Name = "dgvClientes";
-            dgvClientes.RowHeadersWidth = 51;
-            dgvClientes.Size = new Size(687, 366);
-            dgvClientes.TabIndex = 0;
             // 
             // panel3
             // 
+            panel3.BackColor = SystemColors.ButtonFace;
             panel3.Controls.Add(txtFlitroCliente);
-            panel3.Controls.Add(iconButton4);
-            panel3.Controls.Add(iconButton3);
+            panel3.Controls.Add(btnLimpiar);
+            panel3.Controls.Add(btnBusqueda);
             panel3.Controls.Add(comboFiltro);
             panel3.Controls.Add(label5);
             panel3.Dock = DockStyle.Top;
             panel3.Location = new Point(0, 0);
             panel3.Name = "panel3";
-            panel3.Size = new Size(716, 131);
+            panel3.Size = new Size(719, 131);
             panel3.TabIndex = 1;
             // 
-            // label5
+            // txtFlitroCliente
             // 
-            label5.BackColor = Color.DarkSlateGray;
-            label5.Font = new Font("Century Gothic", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label5.ForeColor = SystemColors.ButtonHighlight;
-            label5.Location = new Point(20, 23);
-            label5.Name = "label5";
-            label5.Size = new Size(687, 61);
-            label5.TabIndex = 0;
-            label5.Text = "Lista De Usuarios:";
-            label5.TextAlign = ContentAlignment.MiddleLeft;
+            txtFlitroCliente.Location = new Point(387, 41);
+            txtFlitroCliente.Name = "txtFlitroCliente";
+            txtFlitroCliente.Size = new Size(161, 27);
+            txtFlitroCliente.TabIndex = 11;
+            // 
+            // btnLimpiar
+            // 
+            btnLimpiar.BackColor = Color.DarkSlateGray;
+            btnLimpiar.FlatAppearance.BorderSize = 2;
+            btnLimpiar.FlatStyle = FlatStyle.Flat;
+            btnLimpiar.IconChar = FontAwesome.Sharp.IconChar.Broom;
+            btnLimpiar.IconColor = Color.OliveDrab;
+            btnLimpiar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnLimpiar.Location = new Point(647, 33);
+            btnLimpiar.Name = "btnLimpiar";
+            btnLimpiar.Size = new Size(40, 39);
+            btnLimpiar.TabIndex = 10;
+            btnLimpiar.UseVisualStyleBackColor = false;
+            // 
+            // btnBusqueda
+            // 
+            btnBusqueda.BackColor = Color.DarkSlateGray;
+            btnBusqueda.FlatAppearance.BorderSize = 2;
+            btnBusqueda.FlatStyle = FlatStyle.Flat;
+            btnBusqueda.IconChar = FontAwesome.Sharp.IconChar.Searchengin;
+            btnBusqueda.IconColor = Color.OliveDrab;
+            btnBusqueda.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnBusqueda.Location = new Point(583, 33);
+            btnBusqueda.Name = "btnBusqueda";
+            btnBusqueda.Size = new Size(45, 39);
+            btnBusqueda.TabIndex = 9;
+            btnBusqueda.UseVisualStyleBackColor = false;
             // 
             // comboFiltro
             // 
@@ -266,46 +284,54 @@
             comboFiltro.Size = new Size(151, 28);
             comboFiltro.TabIndex = 1;
             // 
-            // iconButton3
+            // label5
             // 
-            iconButton3.BackColor = Color.DarkSlateGray;
-            iconButton3.FlatAppearance.BorderSize = 2;
-            iconButton3.FlatStyle = FlatStyle.Flat;
-            iconButton3.IconChar = FontAwesome.Sharp.IconChar.Searchengin;
-            iconButton3.IconColor = Color.OliveDrab;
-            iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton3.Location = new Point(583, 33);
-            iconButton3.Name = "iconButton3";
-            iconButton3.Size = new Size(45, 39);
-            iconButton3.TabIndex = 9;
-            iconButton3.UseVisualStyleBackColor = false;
+            label5.BackColor = Color.DarkSlateGray;
+            label5.Font = new Font("Century Gothic", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label5.ForeColor = SystemColors.ButtonHighlight;
+            label5.Location = new Point(16, 23);
+            label5.Name = "label5";
+            label5.Size = new Size(691, 61);
+            label5.TabIndex = 0;
+            label5.Text = "Lista De Usuarios:";
+            label5.TextAlign = ContentAlignment.MiddleLeft;
             // 
-            // iconButton4
+            // dgvClientes
             // 
-            iconButton4.BackColor = Color.DarkSlateGray;
-            iconButton4.FlatAppearance.BorderSize = 2;
-            iconButton4.FlatStyle = FlatStyle.Flat;
-            iconButton4.IconChar = FontAwesome.Sharp.IconChar.Broom;
-            iconButton4.IconColor = Color.OliveDrab;
-            iconButton4.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton4.Location = new Point(647, 33);
-            iconButton4.Name = "iconButton4";
-            iconButton4.Size = new Size(40, 39);
-            iconButton4.TabIndex = 10;
-            iconButton4.UseVisualStyleBackColor = false;
+            dgvClientes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvClientes.Columns.AddRange(new DataGridViewColumn[] { NombreCliente, telefono, emailCliente });
+            dgvClientes.Location = new Point(6, 160);
+            dgvClientes.Name = "dgvClientes";
+            dgvClientes.RowHeadersWidth = 51;
+            dgvClientes.Size = new Size(704, 366);
+            dgvClientes.TabIndex = 0;
             // 
-            // txtFlitroCliente
+            // NombreCliente
             // 
-            txtFlitroCliente.Location = new Point(387, 41);
-            txtFlitroCliente.Name = "txtFlitroCliente";
-            txtFlitroCliente.Size = new Size(161, 27);
-            txtFlitroCliente.TabIndex = 11;
+            NombreCliente.HeaderText = "Nombre del Cliente";
+            NombreCliente.MinimumWidth = 6;
+            NombreCliente.Name = "NombreCliente";
+            NombreCliente.Width = 200;
+            // 
+            // telefono
+            // 
+            telefono.HeaderText = "Telefono";
+            telefono.MinimumWidth = 6;
+            telefono.Name = "telefono";
+            telefono.Width = 170;
+            // 
+            // emailCliente
+            // 
+            emailCliente.HeaderText = "Email";
+            emailCliente.MinimumWidth = 6;
+            emailCliente.Name = "emailCliente";
+            emailCliente.Width = 255;
             // 
             // ClienteForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1020, 554);
+            ClientSize = new Size(1024, 554);
             Controls.Add(tableLayoutPanel1);
             Name = "ClienteForm";
             Text = "ClienteForm";
@@ -315,9 +341,9 @@
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).EndInit();
             panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dgvClientes).EndInit();
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvClientes).EndInit();
             ResumeLayout(false);
         }
 
@@ -342,7 +368,10 @@
         private ComboBox comboFiltro;
         private Label label5;
         private TextBox txtFlitroCliente;
-        private FontAwesome.Sharp.IconButton iconButton4;
-        private FontAwesome.Sharp.IconButton iconButton3;
+        private FontAwesome.Sharp.IconButton btnLimpiar;
+        private FontAwesome.Sharp.IconButton btnBusqueda;
+        private DataGridViewTextBoxColumn NombreCliente;
+        private DataGridViewTextBoxColumn telefono;
+        private DataGridViewTextBoxColumn emailCliente;
     }
 }

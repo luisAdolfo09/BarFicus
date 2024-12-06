@@ -28,22 +28,23 @@ namespace FormularioApp
         // Método para cargar los detalles de la venta en el DataGridView
         private async Task CargarDetallesVenta()
         {
-            var detallesVenta =  _apiClient.ObtenerDetallesVenta(_idVenta);  // Obtener detalles de la venta desde la API
+            var detallesVenta = _apiClient.ObtenerDetallesVenta(_idVenta);  // Obtener detalles de la venta desde la API
             dgvDetalleVenta.DataSource = detallesVenta;  // Asumimos que el DataGridView se llama dgvDetalleVenta
         }
 
         private async void btnAgregar_Click(object sender, EventArgs e)
         {
             // Validamos que los campos de cantidad y precio sean números válidos
-            if (int.TryParse(txtCantidaddt.Text, out int cantidad) && decimal.TryParse(txtPrecioUnit.Text, out decimal precioUnitario))
+            if (int.TryParse(txtCantidad.Text, out int cantidad) && decimal.TryParse(txtPrecioUnit.Text, out decimal precioUnitario))
             {
                 var nuevoDetalleVenta = new DetalleVenta
                 {
                     IdVenta = _idVenta,
-                    IdProducto = int.Parse(txtProductoid.Text),  // Asumimos que el ID del producto se ingresa en este TextBox
+                    /*IdProducto = int.Parse(txtProductoid.Text),*/  // Asumimos que el ID del producto se ingresa en este TextBox
                     Cantidad = cantidad,
                     PrecioUnitario = precioUnitario,
-                    IdEmpleado = 1 // Asumimos que el ID del empleado es fijo o lo obtenemos desde el contexto del usuario
+                    IdEmpleado = 1,
+                    // Asumimos que el ID del empleado es fijo o lo obtenemos desde el contexto del usuario
                 };
 
                 // Llamamos al método para agregar un nuevo detalle de venta
@@ -73,7 +74,7 @@ namespace FormularioApp
                 if (detalleVentaSeleccionado != null)
                 {
                     // Actualizamos los campos del detalle de venta seleccionado con los nuevos valores
-                    detalleVentaSeleccionado.Cantidad = int.Parse(txtCantidaddt.Text);
+                    detalleVentaSeleccionado.Cantidad = int.Parse(txtCantidad.Text);
                     detalleVentaSeleccionado.PrecioUnitario = decimal.Parse(txtPrecioUnit.Text);
 
                     // Llamamos al método para editar el detalle de la venta
@@ -123,11 +124,16 @@ namespace FormularioApp
                 if (detalleVentaSeleccionado != null)
                 {
                     // Cargamos los datos del detalle de venta seleccionado en los TextBox
-                    txtProductoid.Text = detalleVentaSeleccionado.IdProducto.ToString();
-                    txtCantidaddt.Text = detalleVentaSeleccionado.Cantidad.ToString();
+                   
+                    txtCantidad.Text = detalleVentaSeleccionado.Cantidad.ToString();
                     txtPrecioUnit.Text = detalleVentaSeleccionado.PrecioUnitario.ToString("F2");
                 }
             }
+        }
+
+        private void DetalleVentaForm_Load_1(object sender, EventArgs e)
+        {
+
         }
     }
 }
