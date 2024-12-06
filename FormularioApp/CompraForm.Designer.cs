@@ -406,6 +406,7 @@
             Controls.Add(tableLayoutPanel1);
             Name = "CompraForm";
             Text = "CompraForm";
+            Load += CompraForm_Load;
             tableLayoutPanel1.ResumeLayout(false);
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();

@@ -39,13 +39,13 @@
             btnCompra = new Button();
             btnNegocios = new Button();
             panelSubMenu = new Panel();
+            btnProducto = new FontAwesome.Sharp.IconButton();
             btnProveedores = new Button();
             btnempleados = new Button();
             btnRegist = new Button();
             panelLogo = new Panel();
             pictureBox1 = new PictureBox();
             panelChildForm = new Panel();
-            btnProducto = new FontAwesome.Sharp.IconButton();
             panelIniLateral.SuspendLayout();
             panelInventario.SuspendLayout();
             panelNegocio.SuspendLayout();
@@ -213,6 +213,23 @@
             panelSubMenu.Size = new Size(232, 133);
             panelSubMenu.TabIndex = 1;
             // 
+            // btnProducto
+            // 
+            btnProducto.BackColor = Color.FromArgb(35, 32, 39);
+            btnProducto.Dock = DockStyle.Top;
+            btnProducto.FlatStyle = FlatStyle.Flat;
+            btnProducto.ForeColor = Color.White;
+            btnProducto.IconChar = FontAwesome.Sharp.IconChar.None;
+            btnProducto.IconColor = Color.Black;
+            btnProducto.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnProducto.Location = new Point(0, 80);
+            btnProducto.Name = "btnProducto";
+            btnProducto.Size = new Size(232, 47);
+            btnProducto.TabIndex = 3;
+            btnProducto.Text = "Nuevo Producto";
+            btnProducto.TextImageRelation = TextImageRelation.TextBeforeImage;
+            btnProducto.UseVisualStyleBackColor = false;
+            // 
             // btnProveedores
             // 
             btnProveedores.Dock = DockStyle.Top;
@@ -287,23 +304,7 @@
             panelChildForm.Name = "panelChildForm";
             panelChildForm.Size = new Size(679, 553);
             panelChildForm.TabIndex = 1;
-            // 
-            // btnProducto
-            // 
-            btnProducto.BackColor = Color.FromArgb(35, 32, 39);
-            btnProducto.Dock = DockStyle.Top;
-            btnProducto.FlatStyle = FlatStyle.Flat;
-            btnProducto.ForeColor = Color.White;
-            btnProducto.IconChar = FontAwesome.Sharp.IconChar.None;
-            btnProducto.IconColor = Color.Black;
-            btnProducto.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnProducto.Location = new Point(0, 80);
-            btnProducto.Name = "btnProducto";
-            btnProducto.Size = new Size(232, 47);
-            btnProducto.TabIndex = 3;
-            btnProducto.Text = "Nuevo Producto";
-            btnProducto.TextImageRelation = TextImageRelation.TextBeforeImage;
-            btnProducto.UseVisualStyleBackColor = false;
+            //panelChildForm.Paint += panelChildForm_Paint;
             // 
             // IniForm
             // 

@@ -33,7 +33,12 @@ namespace FormularioApp
             decimal precioVenta = 0;
             bool producto_Existente;
 
-        
+
+        }
+
+        private void CompraForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

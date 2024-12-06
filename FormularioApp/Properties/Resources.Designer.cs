@@ -63,6 +63,16 @@ namespace FormularioApp.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _5196_png_1200 {
+            get {
+                object obj = ResourceManager.GetObject("5196.png_1200", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap barficus_adjusted_horizontal_more {
             get {
                 object obj = ResourceManager.GetObject("barficus_adjusted_horizontal_more", resourceCulture);
@@ -76,6 +86,26 @@ namespace FormularioApp.Properties {
         internal static System.Drawing.Bitmap Imagen_de_WhatsApp_2024_12_04_a_las_21_05_00_e04c3daf {
             get {
                 object obj = ResourceManager.GetObject("Imagen de WhatsApp 2024-12-04 a las 21.05.00_e04c3daf", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap R {
+            get {
+                object obj = ResourceManager.GetObject("R", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SLIDE_JUST_EAT_6533_copia {
+            get {
+                object obj = ResourceManager.GetObject("SLIDE-JUST-EAT-6533-copia", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

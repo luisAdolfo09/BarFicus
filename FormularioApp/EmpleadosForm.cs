@@ -185,5 +185,10 @@ namespace FormularioApp
                 Console.WriteLine(ex.ToString());
             }
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

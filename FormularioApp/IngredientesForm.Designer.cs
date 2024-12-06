@@ -45,7 +45,10 @@
             btnAgregar = new Button();
             btnEditar = new Button();
             btnEliminar = new Button();
+            panel1 = new Panel();
+            label7 = new Label();
             ((System.ComponentModel.ISupportInitialize)dgvIngredientes).BeginInit();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // linkLabel1
@@ -192,11 +195,36 @@
             btnEliminar.UseVisualStyleBackColor = true;
             btnEliminar.Click += btnEliminar_Click;
             // 
+            // panel1
+            // 
+            panel1.BackColor = Color.DarkSlateGray;
+            panel1.Controls.Add(label7);
+            panel1.Dock = DockStyle.Top;
+            panel1.ForeColor = SystemColors.ActiveBorder;
+            panel1.Location = new Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(1101, 78);
+            panel1.TabIndex = 17;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Century", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label7.ForeColor = Color.Silver;
+            label7.ImageAlign = ContentAlignment.MiddleLeft;
+            label7.Location = new Point(103, 24);
+            label7.Name = "label7";
+            label7.Size = new Size(251, 28);
+            label7.TabIndex = 0;
+            label7.Text = "Registrar un Platillo";
+            label7.TextAlign = ContentAlignment.MiddleCenter;
+            // 
             // IngredientesForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(925, 540);
+            ClientSize = new Size(1101, 690);
+            Controls.Add(panel1);
             Controls.Add(btnEliminar);
             Controls.Add(btnEditar);
             Controls.Add(btnAgregar);
@@ -217,6 +245,8 @@
             Name = "IngredientesForm";
             Text = "IngredientesForm";
             ((System.ComponentModel.ISupportInitialize)dgvIngredientes).EndInit();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -240,5 +270,7 @@
         private Button btnAgregar;
         private Button btnEditar;
         private Button btnEliminar;
+        private Panel panel1;
+        private Label label7;
     }
 }
